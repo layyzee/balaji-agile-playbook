@@ -13,9 +13,9 @@ This roadmap breaks down your 6 objectives into progressive, manageable phases. 
 ---
 
 ## ⚡ Phase 2: First Automations & Custom AI Personas
-- [ ] **2.1 Meeting Action Items Extractor:** Build a prompt/script in `03_automations/meeting_assistants/` that converts raw meeting notes into action items.
-- [ ] **2.2 Custom Scrum Coach Agent:** Configure an Agile Coach persona in `05_agents_and_skills/agents/` that provides objective feedback on sprint dilemmas.
-- [ ] **2.3 Mock Interviewer Agent:** Configure an AI interviewer persona to simulate behavioral and Scrum Master interview questions.
+- [x] **2.1 Meeting Action Items Extractor:** Build a prompt/script in `03_automations/meeting_assistants/` that converts raw meeting notes into action items.
+- [x] **2.2 Custom Scrum Coach Agent:** Configure an Agile Coach persona in `05_agents_and_skills/agents/` that provides objective feedback on sprint dilemmas.
+- [x] **2.3 Mock Interviewer Agent:** Configure an AI interviewer persona in `05_agents_and_skills/agents/` to simulate behavioral and Scrum Master interview questions.
 
 ---
 
