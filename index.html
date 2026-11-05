@@ -3,32 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Balaji's AI-Powered Agile Delivery Playbook</title>
-  <meta name="description" content="An executive playbook and operational workbench integrating Agile leadership, Scrum governance, Jira/Confluence best practices, and AI automation to accelerate product delivery.">
+  <title>Balaji's Agile, Scrum & Kanban Bible | AI-Powered Delivery Playbook</title>
+  <meta name="description" content="The definitive Agile, Scrum, and Kanban delivery bible and operational workbench. Covers interactive Jira ticket generators, capacity calculators, metrics visual guides, Jira automations, and STAR interview scripts.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-primary: #0a0f1d;
       --bg-surface: #111827;
-      --bg-surface-elevated: #1f2937;
+      --bg-surface-elevated: #1e293b;
       --bg-surface-hover: #283548;
-      --border-subtle: #374151;
+      --border-subtle: #334155;
       --border-accent: #3b82f6;
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --text-dim: #6b7280;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
       --primary: #3b82f6;
       --primary-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
       --accent-emerald: #10b981;
       --accent-amber: #f59e0b;
       --accent-rose: #f43f5e;
       --accent-cyan: #06b6d4;
-      --sidebar-width: 290px;
+      --accent-violet: #8b5cf6;
+      --sidebar-width: 300px;
       --header-height: 64px;
-      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
       --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
     }
@@ -38,21 +37,15 @@
       --bg-surface: #ffffff;
       --bg-surface-elevated: #f1f5f9;
       --bg-surface-hover: #e2e8f0;
-      --border-subtle: #e2e8f0;
+      --border-subtle: #cbd5e1;
       --border-accent: #2563eb;
       --text-main: #0f172a;
       --text-muted: #475569;
       --text-dim: #94a3b8;
       --primary: #2563eb;
-      --shadow-lg: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: var(--font-sans);
       background-color: var(--bg-primary);
@@ -79,7 +72,7 @@
     }
 
     .sidebar-header {
-      padding: 20px 24px;
+      padding: 18px 20px;
       border-bottom: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
@@ -100,8 +93,8 @@
     }
 
     .brand-title {
-      font-weight: 700;
-      font-size: 15px;
+      font-weight: 800;
+      font-size: 14.5px;
       letter-spacing: -0.02em;
       line-height: 1.25;
     }
@@ -109,82 +102,77 @@
     .brand-subtitle {
       font-size: 11px;
       color: var(--accent-cyan);
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
 
     .sidebar-search {
-      padding: 16px 20px 8px;
+      padding: 14px 16px 8px;
     }
 
-    .search-input-wrapper {
-      position: relative;
-    }
-
+    .search-input-wrapper { position: relative; }
     .search-input {
       width: 100%;
       background: var(--bg-surface-elevated);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
-      padding: 9px 12px 9px 36px;
+      padding: 8px 12px 8px 34px;
       color: var(--text-main);
       font-size: 13px;
       font-family: inherit;
       outline: none;
       transition: border-color 0.2s, box-shadow 0.2s;
     }
-
     .search-input:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
     }
-
     .search-icon {
       position: absolute;
-      left: 11px;
+      left: 10px;
       top: 50%;
       transform: translateY(-50%);
       color: var(--text-dim);
-      font-size: 14px;
+      font-size: 13px;
       pointer-events: none;
     }
 
     .nav-sections {
       flex: 1;
       overflow-y: auto;
-      padding: 12px 16px;
+      padding: 10px 14px;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 18px;
     }
 
     .nav-group-title {
-      font-size: 11px;
+      font-size: 10.5px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-dim);
       font-weight: 700;
-      padding: 0 10px;
-      margin-bottom: 6px;
+      padding: 0 8px;
+      margin-bottom: 5px;
     }
 
     .nav-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 2px;
     }
 
     .nav-link {
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      border-radius: 7px;
+      gap: 9px;
+      padding: 7px 10px;
+      border-radius: 6px;
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 500;
       transition: all 0.15s ease;
     }
@@ -199,17 +187,17 @@
       color: var(--primary);
       font-weight: 600;
       border-left: 3px solid var(--primary);
-      border-radius: 0 7px 7px 0;
+      border-radius: 0 6px 6px 0;
     }
 
     .nav-link .nav-icon {
-      font-size: 16px;
-      width: 20px;
+      font-size: 15px;
+      width: 18px;
       text-align: center;
     }
 
     .sidebar-footer {
-      padding: 16px 20px;
+      padding: 14px 16px;
       border-top: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
@@ -228,12 +216,6 @@
       display: flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.2s;
-    }
-
-    .theme-toggle-btn:hover {
-      background: var(--bg-surface-hover);
-      color: var(--text-main);
     }
 
     /* Main Content Area */
@@ -256,7 +238,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 36px;
+      padding: 0 32px;
     }
 
     [data-theme="light"] .top-bar {
@@ -279,15 +261,15 @@
     .top-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 8px 16px;
+      gap: 7px;
+      padding: 8px 14px;
       border-radius: 8px;
       font-size: 13px;
       font-weight: 600;
@@ -303,7 +285,6 @@
       color: #ffffff;
       box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
     }
-
     .btn-primary:hover {
       transform: translateY(-1px);
       box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
@@ -314,10 +295,17 @@
       color: var(--text-main);
       border: 1px solid var(--border-subtle);
     }
-
     .btn-secondary:hover {
       background: var(--bg-surface-hover);
       border-color: var(--text-dim);
+    }
+
+    .btn-accent {
+      background: var(--accent-emerald);
+      color: #ffffff;
+    }
+    .btn-accent:hover {
+      filter: brightness(1.1);
     }
 
     .btn-sm {
@@ -326,18 +314,17 @@
       border-radius: 6px;
     }
 
-    /* Page Content Container */
     .content-container {
-      max-width: 1100px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 40px 36px 80px;
+      padding: 36px 32px 80px;
       width: 100%;
     }
 
     /* Hero Banner */
     .hero-banner {
-      background: linear-gradient(135deg, rgba(30, 58, 138, 0.25) 0%, rgba(88, 28, 135, 0.2) 100%);
-      border: 1px solid rgba(59, 130, 246, 0.25);
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.35) 0%, rgba(88, 28, 135, 0.25) 100%);
+      border: 1px solid rgba(59, 130, 246, 0.3);
       border-radius: 16px;
       padding: 36px 32px;
       margin-bottom: 40px;
@@ -345,38 +332,12 @@
       overflow: hidden;
     }
 
-    .hero-banner::after {
-      content: "";
-      position: absolute;
-      top: -50px;
-      right: -50px;
-      width: 250px;
-      height: 250px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, transparent 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border-radius: 9999px;
-      font-size: 12px;
-      font-weight: 600;
-      background: rgba(59, 130, 246, 0.15);
-      color: var(--primary);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      margin-bottom: 16px;
-    }
-
     .hero-title {
-      font-size: 32px;
+      font-size: 34px;
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.2;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -391,22 +352,21 @@
     .hero-subtitle {
       font-size: 15.5px;
       color: var(--text-muted);
-      max-width: 800px;
+      max-width: 860px;
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .interview-pitch-box {
-      background: rgba(17, 24, 39, 0.7);
-      border: 1px solid rgba(16, 185, 129, 0.3);
+      background: rgba(17, 24, 39, 0.75);
+      border: 1px solid rgba(16, 185, 129, 0.35);
       border-left: 4px solid var(--accent-emerald);
       border-radius: 10px;
       padding: 16px 20px;
-      margin-top: 20px;
     }
 
     .pitch-header {
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 700;
       color: var(--accent-emerald);
       text-transform: uppercase;
@@ -426,45 +386,40 @@
     /* Metric Stat Grid */
     .metric-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 16px;
-      margin-bottom: 48px;
+      margin-bottom: 44px;
     }
 
     .metric-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
-      padding: 20px;
+      padding: 18px 20px;
       transition: transform 0.2s, border-color 0.2s;
     }
-
     .metric-card:hover {
       transform: translateY(-2px);
       border-color: var(--primary);
     }
-
     .metric-val {
-      font-size: 28px;
+      font-size: 26px;
       font-weight: 800;
       color: var(--primary);
       margin-bottom: 4px;
-      font-feature-settings: "tnum";
     }
-
     .metric-title {
       font-size: 13.5px;
       font-weight: 600;
       color: var(--text-main);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
-
     .metric-desc {
       font-size: 12px;
       color: var(--text-dim);
     }
 
-    /* Section Styles */
+    /* Playbook Sections */
     .playbook-section {
       margin-bottom: 56px;
       scroll-margin-top: 80px;
@@ -476,12 +431,12 @@
       justify-content: space-between;
       border-bottom: 2px solid var(--border-subtle);
       padding-bottom: 12px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .section-title {
       font-size: 22px;
-      font-weight: 700;
+      font-weight: 800;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -491,25 +446,183 @@
     .section-desc {
       font-size: 14px;
       color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    /* Interactive Calculator Container */
+    .calculator-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px;
       margin-bottom: 24px;
     }
 
-    /* Lifecycle Scenarios Accordion / Cards */
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .calc-input {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-main);
+      font-family: inherit;
+      outline: none;
+    }
+    .calc-input:focus {
+      border-color: var(--primary);
+    }
+
+    .calc-results {
+      background: rgba(30, 58, 138, 0.2);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 18px 24px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .result-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .result-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .result-value {
+      font-size: 24px;
+      font-weight: 800;
+      color: #60a5fa;
+    }
+
+    /* Ticket Generator Interactive Form */
+    .ticket-gen-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .ticket-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .ticket-grid { grid-template-columns: 1fr; }
+    }
+
+    .ticket-textarea {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 13.5px;
+      color: var(--text-main);
+      font-family: inherit;
+      resize: vertical;
+      min-height: 70px;
+      outline: none;
+    }
+    .ticket-textarea:focus { border-color: var(--primary); }
+
+    /* Visual Chart Guides */
+    .chart-guide-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    .chart-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chart-visual {
+      background: #0b1120;
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: #38bdf8;
+      line-height: 1.4;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .chart-card-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .chart-card-body {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .chart-coaching-tip {
+      font-size: 12px;
+      color: var(--accent-emerald);
+      background: rgba(16, 185, 129, 0.1);
+      border-left: 3px solid var(--accent-emerald);
+      padding: 6px 10px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* Scenarios Accordion */
     .scenario-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       overflow: hidden;
       transition: border-color 0.2s;
     }
-
-    .scenario-card:hover {
-      border-color: rgba(59, 130, 246, 0.4);
-    }
+    .scenario-card:hover { border-color: rgba(59, 130, 246, 0.4); }
 
     .scenario-header {
-      padding: 18px 24px;
+      padding: 16px 20px;
       background: var(--bg-surface);
       cursor: pointer;
       display: flex;
@@ -521,11 +634,11 @@
     .scenario-title-area {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
     .phase-badge {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 700;
       padding: 3px 8px;
       border-radius: 6px;
@@ -536,135 +649,99 @@
     }
 
     .scenario-name {
-      font-size: 15.5px;
+      font-size: 15px;
       font-weight: 600;
       color: var(--text-main);
     }
 
     .chevron-icon {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--text-dim);
       transition: transform 0.25s ease;
     }
-
-    .scenario-card.open .chevron-icon {
-      transform: rotate(180deg);
-    }
+    .scenario-card.open .chevron-icon { transform: rotate(180deg); }
 
     .scenario-body {
-      padding: 0 24px 24px;
+      padding: 0 20px 20px;
       display: none;
       border-top: 1px solid var(--border-subtle);
       background: var(--bg-surface-elevated);
     }
-
     .scenario-card.open .scenario-body {
       display: block;
-      padding-top: 20px;
+      padding-top: 18px;
     }
 
-    /* STAR Breakdown Grid */
     .star-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 10px;
+      margin-bottom: 16px;
     }
-
     @media (max-width: 850px) {
-      .star-grid {
-        grid-template-columns: 1fr;
-      }
+      .star-grid { grid-template-columns: 1fr; }
     }
 
     .star-block {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 8px;
-      padding: 12px 14px;
+      padding: 10px 12px;
     }
-
     .star-tag {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       display: inline-block;
     }
-
     .star-tag.s { color: #60a5fa; }
     .star-tag.t { color: #a78bfa; }
     .star-tag.a { color: #34d399; }
     .star-tag.r { color: #f472b6; }
+    .star-desc { font-size: 12px; color: var(--text-muted); line-height: 1.4; }
 
-    .star-desc {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      line-height: 1.45;
-    }
-
-    /* Conversational Script Box */
     .script-box {
       background: rgba(15, 23, 42, 0.95);
       border: 1px solid rgba(59, 130, 246, 0.3);
       border-radius: 10px;
-      padding: 18px 20px;
-      position: relative;
+      padding: 16px 18px;
     }
-
-    [data-theme="light"] .script-box {
-      background: #f1f5f9;
-      border-color: #cbd5e1;
-    }
-
+    [data-theme="light"] .script-box { background: #f1f5f9; border-color: #cbd5e1; }
     .script-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
-
     .script-label {
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 700;
       color: var(--accent-cyan);
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      display: flex;
-      align-items: center;
-      gap: 6px;
     }
+    .script-text { font-size: 13px; color: var(--text-main); line-height: 1.6; }
 
-    .script-text {
-      font-size: 13.5px;
-      color: var(--text-main);
-      line-height: 1.6;
-      font-style: normal;
-    }
-
-    /* DoR & DoD Interactive Auditor */
+    /* Checklist Card */
     .checklist-card {
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
-      padding: 24px;
-      margin-bottom: 24px;
+      padding: 22px;
+      margin-bottom: 20px;
     }
 
     .checklist-item {
       display: flex;
       align-items: flex-start;
       gap: 12px;
-      padding: 10px 0;
+      padding: 9px 0;
       border-bottom: 1px solid var(--border-subtle);
       cursor: pointer;
     }
-
-    .checklist-item:last-child {
-      border-bottom: none;
-    }
-
+    .checklist-item:last-child { border-bottom: none; }
     .checklist-item input[type="checkbox"] {
       margin-top: 4px;
       width: 17px;
@@ -672,29 +749,17 @@
       accent-color: var(--primary);
       cursor: pointer;
     }
-
-    .checklist-content {
-      flex: 1;
-    }
-
-    .checklist-title {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-main);
-    }
-
-    .checklist-desc {
-      font-size: 12px;
-      color: var(--text-muted);
-    }
+    .checklist-content { flex: 1; }
+    .checklist-title { font-size: 13.5px; font-weight: 600; color: var(--text-main); }
+    .checklist-desc { font-size: 11.5px; color: var(--text-muted); }
 
     .score-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       font-weight: 700;
-      font-size: 13px;
-      padding: 6px 14px;
+      font-size: 12.5px;
+      padding: 5px 12px;
       border-radius: 9999px;
       background: rgba(16, 185, 129, 0.15);
       color: var(--accent-emerald);
@@ -706,41 +771,30 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       overflow: hidden;
     }
-
     .prompt-header {
-      padding: 14px 20px;
+      padding: 12px 18px;
       background: var(--bg-surface-elevated);
       border-bottom: 1px solid var(--border-subtle);
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-
-    .prompt-name {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-main);
-    }
-
+    .prompt-name { font-size: 13.5px; font-weight: 700; color: var(--text-main); }
     .prompt-code {
-      padding: 18px 20px;
+      padding: 16px 18px;
       font-family: var(--font-mono);
-      font-size: 12.5px;
+      font-size: 12px;
       color: #93c5fd;
       line-height: 1.6;
       white-space: pre-wrap;
       background: #0b1120;
     }
+    [data-theme="light"] .prompt-code { background: #f8fafc; color: #1e40af; }
 
-    [data-theme="light"] .prompt-code {
-      background: #f8fafc;
-      color: #1e40af;
-    }
-
-    /* Toast Notification */
+    /* Toast */
     .toast {
       position: fixed;
       bottom: 24px;
@@ -761,13 +815,8 @@
       transition: all 0.25s ease;
       pointer-events: none;
     }
+    .toast.show { opacity: 1; transform: translateY(0); }
 
-    .toast.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Mobile Menu Toggle */
     .mobile-menu-btn {
       display: none;
       background: transparent;
@@ -776,20 +825,11 @@
       color: var(--text-main);
       cursor: pointer;
     }
-
     @media (max-width: 900px) {
-      .sidebar {
-        transform: translateX(-100%);
-      }
-      .sidebar.open {
-        transform: translateX(0);
-      }
-      .main-wrapper {
-        margin-left: 0;
-      }
-      .mobile-menu-btn {
-        display: block;
-      }
+      .sidebar { transform: translateX(-100%); }
+      .sidebar.open { transform: translateX(0); }
+      .main-wrapper { margin-left: 0; }
+      .mobile-menu-btn { display: block; }
     }
   </style>
 </head>
@@ -805,15 +845,15 @@
     <div class="sidebar-header">
       <div class="brand-icon">⚡</div>
       <div>
-        <div class="brand-title">Balaji's Playbook</div>
-        <div class="brand-subtitle">AI Agile Delivery Engine</div>
+        <div class="brand-title">Balaji's Agile Bible</div>
+        <div class="brand-subtitle">Delivery Engine & Playbook</div>
       </div>
     </div>
 
     <div class="sidebar-search">
       <div class="search-input-wrapper">
         <span class="search-icon">🔍</span>
-        <input type="text" id="searchInput" class="search-input" placeholder="Search scenarios, DoR, prompts...">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search Jira, metrics, capacity, STAR...">
       </div>
     </div>
 
@@ -826,7 +866,26 @@
       </div>
 
       <div>
-        <div class="nav-group-title">Scrum Lifecycle (8 Scenarios)</div>
+        <div class="nav-group-title">Agile & Kanban Bible</div>
+        <ul class="nav-list">
+          <li><a href="#bible-comparison" class="nav-link"><span class="nav-icon">📖</span> Scrum vs Kanban vs Scrumban</a></li>
+          <li><a href="#metrics-academy" class="nav-link"><span class="nav-icon">📊</span> Metrics & Chart Interpretation</a></li>
+          <li><a href="#capacity-calculator" class="nav-link"><span class="nav-icon">🧮</span> Interactive Capacity Calculator</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="nav-group-title">Jira & Confluence Operations</div>
+        <ul class="nav-list">
+          <li><a href="#jira-ticket-generator" class="nav-link"><span class="nav-icon">🎫</span> Interactive Jira Ticket Generator</a></li>
+          <li><a href="#jira-dashboard" class="nav-link"><span class="nav-icon">🎛️</span> Executive Jira Dashboard Recipe</a></li>
+          <li><a href="#jira-automations" class="nav-link"><span class="nav-icon">⚙️</span> 5 Power Jira Automations</a></li>
+          <li><a href="#governance" class="nav-link"><span class="nav-icon">📋</span> Interactive DoR & DoD Gates</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="nav-group-title">Scrum Lifecycle (STAR Scripts)</div>
         <ul class="nav-list">
           <li><a href="#refinement" class="nav-link"><span class="nav-icon">1️⃣</span> Refinement & Sizing</a></li>
           <li><a href="#planning" class="nav-link"><span class="nav-icon">2️⃣</span> Planning & Capacity</a></li>
@@ -840,18 +899,11 @@
       </div>
 
       <div>
-        <div class="nav-group-title">Quality & Governance</div>
+        <div class="nav-group-title">Communication & AI Engines</div>
         <ul class="nav-list">
-          <li><a href="#governance" class="nav-link"><span class="nav-icon">📋</span> Interactive DoR / DoD</a></li>
-          <li><a href="#jira-confluence" class="nav-link"><span class="nav-icon">🛠️</span> Jira & Confluence Vault</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="nav-group-title">AI Automation Engines</div>
-        <ul class="nav-list">
-          <li><a href="#ai-prompts" class="nav-link"><span class="nav-icon">🤖</span> Production Prompts</a></li>
           <li><a href="#executive-english" class="nav-link"><span class="nav-icon">✉️</span> Executive Communication</a></li>
+          <li><a href="#ai-prompts" class="nav-link"><span class="nav-icon">🤖</span> Production AI Prompts</a></li>
+          <li><a href="#resources" class="nav-link"><span class="nav-icon">🔗</span> Central Resource Directory</a></li>
         </ul>
       </div>
     </nav>
@@ -860,7 +912,7 @@
       <button id="themeToggle" class="theme-toggle-btn">
         <span id="themeIcon">☀️</span> <span id="themeLabel">Light Mode</span>
       </button>
-      <a href="https://github.com/layyzee" target="_blank" class="btn btn-secondary btn-sm">GitHub</a>
+      <a href="https://github.com/layyzee/balaji-agile-playbook" target="_blank" class="btn btn-secondary btn-sm">Repo</a>
     </div>
   </aside>
 
@@ -872,70 +924,508 @@
         <div class="breadcrumbs">
           <span>Workbench</span>
           <span>/</span>
-          <span class="current">AI Agile Delivery Playbook</span>
+          <span class="current">Agile, Scrum & Kanban Bible</span>
         </div>
       </div>
       <div class="top-actions">
-        <button class="btn btn-secondary btn-sm" onclick="copyEntirePageLink()">🔗 Share Playbook</button>
-        <a href="#governance" class="btn btn-primary btn-sm">Audit DoR/DoD</a>
+        <a href="#capacity-calculator" class="btn btn-secondary btn-sm">🧮 Capacity Calc</a>
+        <a href="#jira-ticket-generator" class="btn btn-primary btn-sm">🎫 Generate Ticket</a>
       </div>
     </header>
 
     <main class="content-container">
-      
+
       <!-- HERO BANNER -->
       <section id="pitch" class="hero-banner">
-        <div class="badge-pill">🚀 Portfolio Showcase & Operational Framework</div>
-        <h1 class="hero-title">Balaji's AI-Powered Agile Delivery Playbook</h1>
+        <div style="display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 9999px; font-size: 12px; font-weight: 700; background: rgba(59, 130, 246, 0.2); color: #60a5fa; margin-bottom: 16px;">
+          🚀 The Definitive Delivery Engine & Interview Portfolio
+        </div>
+        <h1 class="hero-title">Balaji's Agile, Scrum & Kanban Delivery Bible</h1>
         <p class="hero-subtitle">
-          An enterprise framework designed to optimize sprint delivery, eliminate waste, and bridge business stakeholders with engineering using standardized Agile governance and AI automation.
+          An enterprise playbook uniting Agile coaching frameworks, Jira automations, interactive capacity models, chart diagnostics, and AI productivity engines into a single source of truth.
         </p>
 
         <div class="interview-pitch-box">
           <div class="pitch-header">
-            <span>💡</span> How to Present This in an Interview
+            <span>💡</span> How to Pitch This in Senior Scrum Master & Agile Coach Interviews
           </div>
           <div class="pitch-text">
-            "When asked how I leverage modern tools: <em>'I engineered an AI-powered Agile delivery framework that saves 3–4 hours per sprint. It automates INVEST user story generation, enforces interactive Definition of Ready and Done gates, streamlines Jira/Confluence workflows, and equips teams with structured resolution frameworks for every stage of the Scrum lifecycle.'</em>"
+            "When asked how I lead teams: <em>'I engineered an all-in-one Agile Delivery Bible that bridges Scrum governance, Kanban flow metrics, and AI automation. It standardizes Definition of Ready (DoR) and Definition of Done (DoD) directly into Jira tickets, calculates true capacity mathematically to eliminate overcommitments, monitors CFD and Burndown flow bottlenecks, and cuts 3–4 hours of manual administrative overhead per sprint.'</em>"
           </div>
         </div>
       </section>
 
-      <!-- METRICS & BUSINESS ROI -->
+      <!-- METRIC STAT GRID -->
       <section class="metric-grid">
         <div class="metric-card">
           <div class="metric-val">40%</div>
           <div class="metric-title">Faster Refinement</div>
-          <div class="metric-desc">INVEST-standardized story slicing and automated Gherkin acceptance criteria generation.</div>
+          <div class="metric-desc">Interactive INVEST story generator and automated Gherkin acceptance criteria.</div>
         </div>
-
         <div class="metric-card">
           <div class="metric-val">91%</div>
           <div class="metric-title">Say-Do Predictability</div>
-          <div class="metric-desc">Transitioned from gut-feel pressure to capacity-based sprint planning and focus factoring.</div>
+          <div class="metric-desc">Empirical focus factor and capacity deduction replacing gut-feel commitments.</div>
         </div>
-
         <div class="metric-card">
           <div class="metric-val">0</div>
           <div class="metric-title">Unvetted Scope Creep</div>
-          <div class="metric-desc">Established fast-track emergency buffers and standardized context-switching policies.</div>
+          <div class="metric-desc">Standardized fast-track emergency buffers and context-switching policies.</div>
         </div>
-
         <div class="metric-card">
-          <div class="metric-val">22 Min</div>
-          <div class="metric-title">Automated Release</div>
-          <div class="metric-desc">Eliminated 14-hour weekend manual deploys using Feature Flags and CI/CD automation.</div>
+          <div class="metric-val">3+ Hrs</div>
+          <div class="metric-title">Admin Time Saved</div>
+          <div class="metric-desc">Auto-generated retro action summaries, Jira automations, and executive blocker updates.</div>
         </div>
       </section>
 
-      <!-- SCRUM LIFECYCLE SCENARIOS -->
+      <!-- BIBLE: SCRUM VS KANBAN VS SCRUMBAN -->
+      <section id="bible-comparison" class="playbook-section">
+        <div class="section-header">
+          <h2 class="section-title">📖 The Delivery Framework Bible: Scrum vs. Kanban vs. Scrumban</h2>
+        </div>
+        <p class="section-desc">
+          Knowing when and how to apply each framework is the hallmark of a mature Agile Coach.
+        </p>
+
+        <div class="checklist-card" style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-size: 13.5px; text-align: left;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-subtle); background: var(--bg-surface-elevated);">
+                <th style="padding: 12px;">Dimension</th>
+                <th style="padding: 12px; color: var(--primary);">Scrum</th>
+                <th style="padding: 12px; color: var(--accent-emerald);">Kanban</th>
+                <th style="padding: 12px; color: var(--accent-violet);">Scrumban</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; font-weight: 700;">Cadence & Iteration</td>
+                <td style="padding: 12px;">Fixed-length Sprints (typically 2 weeks)</td>
+                <td style="padding: 12px;">Continuous flow (no prescribed iterations)</td>
+                <td style="padding: 12px;">Flow-based with on-demand planning & retros</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; font-weight: 700;">Limiting WIP</td>
+                <td style="padding: 12px;">Sprint Backlog commitment per iteration</td>
+                <td style="padding: 12px;">Strict WIP limits per workflow column</td>
+                <td style="padding: 12px;">Column WIP limits + buffer thresholds</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; font-weight: 700;">Core Metrics</td>
+                <td style="padding: 12px;">Velocity, Burndown, Say-Do ratio</td>
+                <td style="padding: 12px;">Cycle Time, Lead Time, Throughput, CFD</td>
+                <td style="padding: 12px;">Cycle Time + Sprint Goal completion</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px; font-weight: 700;">Roles & Ceremonies</td>
+                <td style="padding: 12px;">Scrum Master, PO, Devs; 4 Ceremonies</td>
+                <td style="padding: 12px;">No required roles; Service Delivery Review</td>
+                <td style="padding: 12px;">Lightweight daily sync + on-demand retro</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px; font-weight: 700;">Best Suited For</td>
+                <td style="padding: 12px;">Product development with cohesive goals</td>
+                <td style="padding: 12px;">DevOps, support, IT operations, continuous maintenance</td>
+                <td style="padding: 12px;">Transitioning teams, mixed feature + maintenance work</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- METRICS & CHART INTERPRETATION ACADEMY -->
+      <section id="metrics-academy" class="playbook-section">
+        <div class="section-header">
+          <h2 class="section-title">📊 Agile Metrics Academy: Diagnosing Visual Charts</h2>
+        </div>
+        <p class="section-desc">
+          How to read common Agile charts like a seasoned coach and spot dysfunction before delivery fails.
+        </p>
+
+        <div class="chart-guide-grid">
+          <!-- Burndown -->
+          <div class="chart-card">
+            <div class="chart-card-title">1. Sprint Burndown: The "Late Cliff" Anti-Pattern</div>
+            <div class="chart-visual">Pts
+30 | \
+25 |  \___      <-- Flatline (Days 2-8)
+15 |      \
+ 0 |_______\___ <-- Sudden Cliff (Day 10)
+   D1  D4  D7  D10</div>
+            <p class="chart-card-body">
+              <strong>What it means:</strong> The line flatlines across the sprint, then crashes on the last day. Stories aren't being sliced small, or testing is bunched up as a mini-waterfall.
+            </p>
+            <div class="chart-coaching-tip">
+              <strong>Coach Ask:</strong> "How can we slice user stories smaller so we can deploy and verify work daily rather than on Day 10?"
+            </div>
+          </div>
+
+          <!-- CFD -->
+          <div class="chart-card">
+            <div class="chart-card-title">2. Cumulative Flow (CFD): Diverging Bottlenecks</div>
+            <div class="chart-visual">WIP
+60 |       /  / Done
+40 |      /  /  In Test (WIDENING!)
+20 |     /  /   In Dev
+ 0 |____/__/____
+   W1  W2  W3  W4</div>
+            <p class="chart-card-body">
+              <strong>What it means:</strong> A band that widens indicates work is piling up in that stage (e.g., QA bottleneck). Horizontal bands indicate stagnation or starvation.
+            </p>
+            <div class="chart-coaching-tip">
+              <strong>Coach Ask:</strong> "Our 'In Test' band is widening. Can developers swarm with QA to pair on test automation today?"
+            </div>
+          </div>
+
+          <!-- Control Chart -->
+          <div class="chart-card">
+            <div class="chart-card-title">3. Control Chart: High Variance Outliers</div>
+            <div class="chart-visual">Days
+20 |    * (Outlier: 19 days)
+10 | ----------------- Upper Control
+ 5 | . . * . * . * . . Mean (4 days)
+ 0 |_________________
+   T1  T2  T3  T4</div>
+            <p class="chart-card-body">
+              <strong>What it means:</strong> Points that shoot far above the 85th percentile upper control limit signal hidden dependencies, unrefined stories, or blocked code reviews.
+            </p>
+            <div class="chart-coaching-tip">
+              <strong>Coach Ask:</strong> "Ticket #402 took 19 days compared to our 4-day average. What blocked it and how do we prevent it?"
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE CAPACITY PLANNING CALCULATOR -->
+      <section id="capacity-calculator" class="playbook-section">
+        <div class="section-header">
+          <h2 class="section-title">🧮 Interactive Capacity Planning Calculator</h2>
+          <button class="btn btn-secondary btn-sm" onclick="copyCapacitySummary()">Copy Capacity for Planning</button>
+        </div>
+        <p class="section-desc">
+          Never let stakeholders pressure your team into gut-feel overcommitments. Calculate realistic sprint capacity mathematically.
+        </p>
+
+        <div class="calculator-box">
+          <div class="calc-grid">
+            <div class="input-group">
+              <label class="input-label" for="numDevs">Team Members (Dev + QA):</label>
+              <input type="number" id="numDevs" class="calc-input" value="5" min="1" max="50" oninput="calculateCapacity()">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="sprintDays">Working Days in Sprint:</label>
+              <input type="number" id="sprintDays" class="calc-input" value="10" min="1" max="30" oninput="calculateCapacity()">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ptoDays">Total Planned Leave / Holidays (Days):</label>
+              <input type="number" id="ptoDays" class="calc-input" value="2" min="0" max="100" oninput="calculateCapacity()">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ceremonyPct">Ceremony & Admin Overhead (%):</label>
+              <input type="number" id="ceremonyPct" class="calc-input" value="15" min="0" max="50" oninput="calculateCapacity()">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="focusFactor">Team Focus Factor (%):</label>
+              <input type="number" id="focusFactor" class="calc-input" value="75" min="30" max="100" oninput="calculateCapacity()">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="hoursPerPt">Historical Hours per Story Point:</label>
+              <input type="number" id="hoursPerPt" class="calc-input" value="6" min="1" max="20" oninput="calculateCapacity()">
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="result-item">
+              <span class="result-label">Gross Available Hours</span>
+              <span id="grossHours" class="result-value">384 hrs</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Net Available Hours</span>
+              <span id="netHours" class="result-value">326 hrs</span>
+            </div>
+            <div class="result-item">
+              <span class="result-label">Focused Engineering Hours</span>
+              <span id="focusHours" class="result-value">245 hrs</span>
+            </div>
+            <div class="result-item" style="border-left: 2px solid var(--border-accent); padding-left: 16px;">
+              <span class="result-label" style="color: #60a5fa;">Recommended Story Point Capacity</span>
+              <span id="recommendedPoints" class="result-value" style="color: #34d399;">~41 Points</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE JIRA TICKET GENERATOR -->
+      <section id="jira-ticket-generator" class="playbook-section">
+        <div class="section-header">
+          <h2 class="section-title">🎫 Interactive Jira Ticket & DoR Generator</h2>
+          <button class="btn btn-primary btn-sm" onclick="generateJiraTicket()">Copy Formatted Jira Description</button>
+        </div>
+        <p class="section-desc">
+          Enforce Definition of Ready on every single card. Fill in the fields below to generate a production-ready, INVEST-compliant Jira ticket description ready to paste.
+        </p>
+
+        <div class="ticket-gen-box">
+          <div class="ticket-grid">
+            <div class="input-group">
+              <label class="input-label" for="ticketRole">User Persona ("As a..."):</label>
+              <input type="text" id="ticketRole" class="calc-input" value="Registered Customer">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ticketGoal">Feature Goal ("I want to..."):</label>
+              <input type="text" id="ticketGoal" class="calc-input" value="filter my transaction history by date and category">
+            </div>
+          </div>
+
+          <div class="input-group" style="margin-bottom: 16px;">
+            <label class="input-label" for="ticketBenefit">Business Benefit ("So that..."):</label>
+            <input type="text" id="ticketBenefit" class="calc-input" value="I can reconcile my monthly expenses without downloading raw CSV files">
+          </div>
+
+          <div class="ticket-grid">
+            <div class="input-group">
+              <label class="input-label" for="happyPath">Acceptance Criteria 1 (Happy Path - Given/When/Then):</label>
+              <textarea id="happyPath" class="ticket-textarea">Given I am on the Transactions page
+When I select 'Last 30 Days' and 'Groceries'
+Then only matching transactions display within 1.5 seconds</textarea>
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="edgeCase">Acceptance Criteria 2 (Edge / Validation Case):</label>
+              <textarea id="edgeCase" class="ticket-textarea">Given no transactions match the selected filters
+When the search runs
+Then an empty state illustrates: 'No transactions found for this date range'</textarea>
+            </div>
+          </div>
+
+          <div class="ticket-grid">
+            <div class="input-group">
+              <label class="input-label" for="ticketDependencies">Technical Dependencies / Notes:</label>
+              <input type="text" id="ticketDependencies" class="calc-input" value="Requires Transactions Query API v2 endpoint (#API-302)">
+            </div>
+            <div class="input-group">
+              <label class="input-label" for="ticketSizing">Estimated Points & DoR Status:</label>
+              <input type="text" id="ticketSizing" class="calc-input" value="3 Story Points | Definition of Ready Verified">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JIRA DASHBOARD RECIPE -->
+      <section id="jira-dashboard" class="playbook-section">
+        <div class="section-header">
+          <h2 class="section-title">🎛️ Executive Jira Dashboard Blueprint</h2>
+          <button class="btn btn-secondary btn-sm" onclick="copyDashboardLayout()">Copy Dashboard Recipe</button>
+        </div>
+        <p class="section-desc">
+          The exact 6 gadgets and JQL filters needed to build an executive-grade Jira delivery dashboard that eliminates surprise status requests.
+        </p>
+
+        <div class="chart-guide-grid">
+          <div class="chart-card">
+            <div class="chart-card-title">Gadget 1: Sprint Health Gadget</div>
+            <p class="chart-card-body">
+              <strong>Purpose:</strong> High-level visual gauge showing time elapsed vs. work complete, scope changes, and flagged blockers.
+            </p>
+            <div class="chart-coaching-tip">Place in Top Left (Width 50%)</div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-card-title">Gadget 2: Sprint Burndown Gadget</div>
+            <p class="chart-card-body">
+              <strong>Purpose:</strong> Real-time guideline burndown tracking remaining story points vs. ideal burndown slope.
+            </p>
+            <div class="chart-coaching-tip">Place in Top Right (Width 50%)</div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-card-title">Gadget 3: Two-Dimensional Filter</div>
+            <p class="chart-card-body">
+              <strong>JQL:</strong> <code>sprint in openSprints()</code><br>
+              <strong>X-Axis:</strong> Assignee | <strong>Y-Axis:</strong> Status.<br>
+              Instantly spots individual developer overload or bottlenecked QA columns.
+            </p>
+            <div class="chart-coaching-tip">Place in Mid Left (Width 50%)</div>
+          </div>
+
+          <div class="chart-card">
+            <div class="chart-card-title">Gadget 4: Stale Blocker Alert Filter</div>
+            <p class="chart-card-body">
+              <strong>JQL:</strong> <code>status = "Blocked" AND updated <= -2d</code><br>
+              Surfaces cards stuck with dependencies for more than 48 hours for immediate Scrum Master escalation.
+            </p>
+            <div class="chart-coaching-tip">Place in Mid Right (Width 50%)</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- JIRA AUTOMATIONS BLUEPRINT -->
+      <section id="jira-automations" class="playbook-section">
+        <div class="section-header">
+          <h2 class="section-title">⚙️ 5 Power Jira Automation Rules</h2>
+          <button class="btn btn-secondary btn-sm" onclick="copyAutomationsGuide()">Copy Automation Recipes</button>
+        </div>
+        <p class="section-desc">
+          Automate routine governance so developers and Scrum Masters never have to do manual ticket hygiene.
+        </p>
+
+        <div class="checklist-card">
+          <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #60a5fa; margin-bottom: 4px;">Rule 1: Auto-Inject DoR Checklist on Status Change</div>
+            <p style="font-size: 12.5px; color: var(--text-muted);">
+              <strong>Trigger:</strong> Issue transitioned to <em>'Ready for Refinement'</em><br>
+              <strong>Action:</strong> Append DoR markdown checklist to ticket description and add comment: <em>"Story ready for Three Amigos review."</em>
+            </p>
+          </div>
+
+          <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #60a5fa; margin-bottom: 4px;">Rule 2: Slack Alert for Cards Blocked > 48 Hours</div>
+            <p style="font-size: 12.5px; color: var(--text-muted);">
+              <strong>Trigger:</strong> Scheduled JQL check: <code>status = "Blocked" AND updated <= -2d</code><br>
+              <strong>Action:</strong> Send Slack notification to #scrum-blockers channel tagging Scrum Master and assignee.
+            </p>
+          </div>
+
+          <div style="margin-bottom: 16px; border-bottom: 1px solid var(--border-subtle); padding-bottom: 12px;">
+            <div style="font-size: 14.5px; font-weight: 700; color: #60a5fa; margin-bottom: 4px;">Rule 3: Mid-Sprint Scope Injection Labeler</div>
+            <p style="font-size: 12.5px; color: var(--text-muted);">
+              <strong>Trigger:</strong> Issue added to active sprint after sprint start date<br>
+              <strong>Action:</strong> Auto-add label <code>mid-sprint-injection</code> and flag ticket color for transparent retro tracking.
+            </p>
+          </div>
+
+          <div>
+            <div style="font-size: 14.5px; font-weight: 700; color: #60a5fa; margin-bottom: 4px;">Rule 4: Auto-Close Parent Story when All Sub-Tasks are Done</div>
+            <p style="font-size: 12.5px; color: var(--text-muted);">
+              <strong>Trigger:</strong> Sub-task transitioned to <em>'Done'</em><br>
+              <strong>Condition:</strong> All other sub-tasks match status = <em>'Done'</em><br>
+              <strong>Action:</strong> Transition Parent Story to <em>'Ready for Review / UAT'</em>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE GOVERNANCE: DOR & DOD -->
+      <section id="governance" class="playbook-section">
+        <div class="section-header">
+          <h2 class="section-title">📋 Interactive Governance: DoR & DoD Audit Gates</h2>
+          <div id="dorScore" class="score-badge">Audit Score: 0/6 (Draft)</div>
+        </div>
+        <p class="section-desc">
+          Audit user stories interactively during Refinement and Review. Check items off, then copy the formatted audit record for Jira.
+        </p>
+
+        <div class="checklist-card">
+          <h3 style="font-size: 15.5px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <span>Definition of Ready (DoR) Gate — Pre-Sprint Gate</span>
+            <button class="btn btn-secondary btn-sm" onclick="copyDoRReport()">Copy DoR for Jira</button>
+          </h3>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dor1" onchange="updateAuditScore()">
+            <label for="dor1" class="checklist-content">
+              <div class="checklist-title">1. Clear Persona & Problem Statement (INVEST - Valuable)</div>
+              <div class="checklist-desc">Story specifies 'As a...', 'I want...', 'So that...' with explicit business or user justification.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dor2" onchange="updateAuditScore()">
+            <label for="dor2" class="checklist-content">
+              <div class="checklist-title">2. Gherkin Acceptance Criteria (INVEST - Testable)</div>
+              <div class="checklist-desc">At least one Happy Path and one Edge Case defined in Given/When/Then format with unambiguous pass criteria.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dor3" onchange="updateAuditScore()">
+            <label for="dor3" class="checklist-content">
+              <div class="checklist-title">3. Dependencies Identified & Pre-requisites Verified (INVEST - Independent)</div>
+              <div class="checklist-desc">No unresolved external blocking API or infrastructure dependencies pending.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dor4" onchange="updateAuditScore()">
+            <label for="dor4" class="checklist-content">
+              <div class="checklist-title">4. Sized within Sprint Capacity (INVEST - Small)</div>
+              <div class="checklist-desc">Story is estimated by developers and sized small enough to complete within 3–4 days max.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dor5" onchange="updateAuditScore()">
+            <label for="dor5" class="checklist-content">
+              <div class="checklist-title">5. UX Wireframes & API Contracts Attached</div>
+              <div class="checklist-desc">Figma links or OpenAPI spec schemas linked and approved by PO and design leads.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dor6" onchange="updateAuditScore()">
+            <label for="dor6" class="checklist-content">
+              <div class="checklist-title">6. Test Data & Staging Pre-requisites Ready</div>
+              <div class="checklist-desc">QA confirms necessary synthetic data and environment configurations are in place.</div>
+            </label>
+          </div>
+        </div>
+
+        <div class="checklist-card">
+          <h3 style="font-size: 15.5px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <span>Definition of Done (DoD) Gate — Release Gate</span>
+            <button class="btn btn-secondary btn-sm" onclick="copyDoDReport()">Copy DoD for Confluence</button>
+          </h3>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dod1">
+            <label for="dod1" class="checklist-content">
+              <div class="checklist-title">1. Automated Unit & Integration Tests Passing (>80% coverage)</div>
+              <div class="checklist-desc">CI/CD pipeline passes all tests automatically before code merge.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dod2">
+            <label for="dod2" class="checklist-content">
+              <div class="checklist-title">2. Peer Code Review Completed & Approved</div>
+              <div class="checklist-desc">At least one senior peer review approval on GitHub/Bitbucket with no unaddressed comments.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dod3">
+            <label for="dod3" class="checklist-content">
+              <div class="checklist-title">3. Staging / UAT Verification</div>
+              <div class="checklist-desc">QA verifies story against all Gherkin scenarios in staging environment with zero open P1/P2 defects.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dod4">
+            <label for="dod4" class="checklist-content">
+              <div class="checklist-title">4. Confluence Documentation & Release Notes Updated</div>
+              <div class="checklist-desc">User guide, system architecture changes, or API endpoint updates documented.</div>
+            </label>
+          </div>
+
+          <div class="checklist-item">
+            <input type="checkbox" id="dod5">
+            <label for="dod5" class="checklist-content">
+              <div class="checklist-title">5. PO Sign-Off & Acceptance</div>
+              <div class="checklist-desc">Product Owner inspects the functionality and formally transitions ticket to 'Done'.</div>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCRUM LIFECYCLE SCENARIOS (STAR SCRIPTS) -->
       <section id="lifecycle" class="playbook-section">
         <div class="section-header">
           <h2 class="section-title">🧭 The Scrum Lifecycle: STAR Interview Scripts</h2>
-          <span style="font-size: 13px; color: var(--text-dim);">8 End-to-End Scenarios</span>
+          <span style="font-size: 13px; color: var(--text-dim);">8 Complete Scenarios</span>
         </div>
         <p class="section-desc">
-          Click on any phase to review the exact STAR breakdown (Situation, Task, Action, Result) and the 90-second conversational script ready for high-stakes interviews.
+          Click any scenario to review the structured STAR breakdown and copy the 90-second conversational interview script.
         </p>
 
         <!-- Scenario 1 -->
@@ -1268,154 +1758,48 @@
 
       </section>
 
-      <!-- INTERACTIVE GOVERNANCE: DOR & DOD -->
-      <section id="governance" class="playbook-section">
+      <!-- EXECUTIVE COMMUNICATION -->
+      <section id="executive-english" class="playbook-section">
         <div class="section-header">
-          <h2 class="section-title">📋 Interactive Governance: DoR & DoD Audit Gates</h2>
-          <div id="dorScore" class="score-badge">Audit Score: 0/6 (Draft)</div>
+          <h2 class="section-title">✉️ Executive Communication: "Say This, Not That"</h2>
         </div>
         <p class="section-desc">
-          Use this interactive audit gate during Backlog Refinement and Sprint Review. Check each item as it is verified, then copy the formatted audit record directly into Jira or Confluence.
+          Assertive, solutions-oriented phrasing to build stakeholder trust during blockers and scope adjustments.
         </p>
 
         <div class="checklist-card">
-          <h3 style="font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
-            <span>Definition of Ready (DoR) Gate — Pre-Sprint Gate</span>
-            <button class="btn btn-secondary btn-sm" onclick="copyDoRReport()">Copy DoR for Jira</button>
-          </h3>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dor1" onchange="updateAuditScore()">
-            <label for="dor1" class="checklist-content">
-              <div class="checklist-title">1. Clear Persona & Problem Statement (INVEST - Valuable)</div>
-              <div class="checklist-desc">Story specifies 'As a...', 'I want...', 'So that...' with explicit business or user justification.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dor2" onchange="updateAuditScore()">
-            <label for="dor2" class="checklist-content">
-              <div class="checklist-title">2. Gherkin Acceptance Criteria (INVEST - Testable)</div>
-              <div class="checklist-desc">At least one Happy Path and one Edge Case defined in Given/When/Then format with unambiguous pass criteria.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dor3" onchange="updateAuditScore()">
-            <label for="dor3" class="checklist-content">
-              <div class="checklist-title">3. Dependencies Identified & Pre-requisites Verified (INVEST - Independent)</div>
-              <div class="checklist-desc">No unresolved external blocking API or infrastructure dependencies pending.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dor4" onchange="updateAuditScore()">
-            <label for="dor4" class="checklist-content">
-              <div class="checklist-title">4. Sized within Sprint Capacity (INVEST - Small)</div>
-              <div class="checklist-desc">Story is estimated by developers and sized small enough to complete within 3–4 days max.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dor5" onchange="updateAuditScore()">
-            <label for="dor5" class="checklist-content">
-              <div class="checklist-title">5. UX Wireframes & API Contracts Attached</div>
-              <div class="checklist-desc">Figma links or OpenAPI spec schemas linked and approved by PO and design leads.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dor6" onchange="updateAuditScore()">
-            <label for="dor6" class="checklist-content">
-              <div class="checklist-title">6. Test Data & Staging Pre-requisites Ready</div>
-              <div class="checklist-desc">QA confirms necessary synthetic data and environment configurations are in place.</div>
-            </label>
-          </div>
-        </div>
-
-        <div class="checklist-card">
-          <h3 style="font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between;">
-            <span>Definition of Done (DoD) Gate — Release & Shipped Gate</span>
-            <button class="btn btn-secondary btn-sm" onclick="copyDoDReport()">Copy DoD for Confluence</button>
-          </h3>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dod1">
-            <label for="dod1" class="checklist-content">
-              <div class="checklist-title">1. Automated Unit & Integration Tests Passing (>80% coverage)</div>
-              <div class="checklist-desc">CI/CD pipeline passes all tests automatically before code merge.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dod2">
-            <label for="dod2" class="checklist-content">
-              <div class="checklist-title">2. Peer Code Review Completed & Approved</div>
-              <div class="checklist-desc">At least one senior peer review approval on GitHub/Bitbucket with no unaddressed comments.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dod3">
-            <label for="dod3" class="checklist-content">
-              <div class="checklist-title">3. Staging / UAT Verification</div>
-              <div class="checklist-desc">QA verifies story against all Gherkin scenarios in staging environment with zero open P1/P2 defects.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dod4">
-            <label for="dod4" class="checklist-content">
-              <div class="checklist-title">4. Confluence Documentation & Release Notes Updated</div>
-              <div class="checklist-desc">User guide, system architecture changes, or API endpoint updates documented.</div>
-            </label>
-          </div>
-
-          <div class="checklist-item">
-            <input type="checkbox" id="dod5">
-            <label for="dod5" class="checklist-content">
-              <div class="checklist-title">5. PO Sign-Off & Acceptance</div>
-              <div class="checklist-desc">Product Owner inspects the functionality and formally transitions ticket to 'Done'.</div>
-            </label>
-          </div>
+          <table style="width: 100%; border-collapse: collapse; font-size: 13.5px;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-subtle); text-align: left;">
+                <th style="padding: 10px; color: var(--accent-rose);">❌ Avoid (Apologetic / Weak)</th>
+                <th style="padding: 10px; color: var(--accent-emerald);">✅ Use Instead (Assertive & Solutions-Focused)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px 10px; color: var(--text-muted);">"Sorry to bother you, but team X didn't give us keys."</td>
+                <td style="padding: 12px 10px; font-weight: 600;">"We have an external dependency with team X that is impacting our sprint target. Here is our unblocking path."</td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-subtle);">
+                <td style="padding: 12px 10px; color: var(--text-muted);">"Hopefully that makes sense? Let me know if that's okay."</td>
+                <td style="padding: 12px 10px; font-weight: 600;">"Please review the proposed timeline by 3 PM so we can commit to the sprint backlog."</td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 10px; color: var(--text-muted);">"I think maybe we should consider changing retros."</td>
+                <td style="padding: 12px 10px; font-weight: 600;">"Based on our cycle time data, I recommend we adjust our retro format to focus on our top bottleneck."</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
-      <!-- JIRA & CONFLUENCE TOOLKIT -->
-      <section id="jira-confluence" class="playbook-section">
-        <div class="section-header">
-          <h2 class="section-title">🛠️ Jira & Confluence Best Practice Blueprints</h2>
-        </div>
-        <p class="section-desc">
-          Ready-to-use JQL filters and documentation standards to save hours of manual tracking for Scrum Masters and Product Managers.
-        </p>
-
-        <div class="prompt-container">
-          <div class="prompt-header">
-            <span class="prompt-name">🔍 Essential Jira JQL Filters for Scrum Masters</span>
-            <button class="btn btn-secondary btn-sm" onclick="copyText('jqlCode')">Copy JQL Snippets</button>
-          </div>
-          <div id="jqlCode" class="prompt-code"># 1. Unestimated or Incomplete DoR in Active Backlog
-project = "PROJ" AND sprint in openSprints() AND "Story Points" is EMPTY
-
-# 2. Blocked Cards Stagnating (Blocked for > 2 days)
-project = "PROJ" AND status = "Blocked" AND updated <= -2d
-
-# 3. Pull Request Review Bottleneck (In Review for > 24 hours)
-project = "PROJ" AND status = "In Review" AND updated <= -1d
-
-# 4. Scope Injected Mid-Sprint (Cards added after sprint start)
-project = "PROJ" AND sprint in openSprints() AND created > "2026-11-01"</div>
-        </div>
-      </section>
-
-      <!-- AI PROMPT ENGINES -->
+      <!-- AI PRODUCTION PROMPTS -->
       <section id="ai-prompts" class="playbook-section">
         <div class="section-header">
           <h2 class="section-title">🤖 AI Production Prompts for Agile Delivery</h2>
         </div>
         <p class="section-desc">
-          Plug-and-play prompts you can paste into Antigravity, ChatGPT, or Claude to automate repetitive Scrum ceremonies and documentation.
+          Plug-and-play prompts for Antigravity, ChatGPT, or Claude to automate repetitive Scrum ceremonies and documentation.
         </p>
 
         <div class="prompt-container">
@@ -1447,38 +1831,37 @@ Transcript: [PASTE RAW TRANSCRIPT / NOTES HERE]</div>
         </div>
       </section>
 
-      <!-- EXECUTIVE COMMUNICATION -->
-      <section id="executive-english" class="playbook-section">
+      <!-- CENTRAL RESOURCE DIRECTORY -->
+      <section id="resources" class="playbook-section">
         <div class="section-header">
-          <h2 class="section-title">✉️ Executive Communication: "Say This, Not That"</h2>
+          <h2 class="section-title">🔗 Central Resource Directory & Workbench Vault</h2>
         </div>
         <p class="section-desc">
-          How to communicate blockers, sprint adjustments, and dependencies with confidence and executive presence.
+          All workspace links, markdown guides, templates, and repository artifacts accessible in one place.
         </p>
 
         <div class="checklist-card">
-          <table style="width: 100%; border-collapse: collapse; font-size: 13.5px;">
-            <thead>
-              <tr style="border-bottom: 2px solid var(--border-subtle); text-align: left;">
-                <th style="padding: 10px; color: var(--accent-rose);">❌ Avoid (Apologetic / Weak)</th>
-                <th style="padding: 10px; color: var(--accent-emerald);">✅ Use Instead (Assertive & Solutions-Focused)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 12px 10px; color: var(--text-muted);">"Sorry to bother you, but team X didn't give us keys."</td>
-                <td style="padding: 12px 10px; font-weight: 600;">"We have an external dependency with team X that is impacting our sprint target. Here is our unblocking path."</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--border-subtle);">
-                <td style="padding: 12px 10px; color: var(--text-muted);">"Hopefully that makes sense? Let me know if that's okay."</td>
-                <td style="padding: 12px 10px; font-weight: 600;">"Please review the proposed timeline by 3 PM so we can commit to the sprint backlog."</td>
-              </tr>
-              <tr>
-                <td style="padding: 12px 10px; color: var(--text-muted);">"I think maybe we should consider changing retros."</td>
-                <td style="padding: 12px 10px; font-weight: 600;">"Based on our cycle time data, I recommend we adjust our retro format to focus on our top bottleneck."</td>
-              </tr>
-            </tbody>
-          </table>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+            <div style="background: var(--bg-surface-elevated); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #60a5fa; margin-bottom: 4px;">🌐 Live Public Playbook URL</div>
+              <a href="https://layyzee.github.io/balaji-agile-playbook/" target="_blank" style="color: var(--text-main); font-size: 13px; text-decoration: underline;">https://layyzee.github.io/balaji-agile-playbook/</a>
+            </div>
+
+            <div style="background: var(--bg-surface-elevated); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #60a5fa; margin-bottom: 4px;">📦 GitHub Repository</div>
+              <a href="https://github.com/layyzee/balaji-agile-playbook" target="_blank" style="color: var(--text-main); font-size: 13px; text-decoration: underline;">https://github.com/layyzee/balaji-agile-playbook</a>
+            </div>
+
+            <div style="background: var(--bg-surface-elevated); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #60a5fa; margin-bottom: 4px;">⛵ Sailboat Retro Template</div>
+              <p style="font-size: 12px; color: var(--text-muted);"><code>01_agile_hub/templates/sailboat_retro_template.md</code></p>
+            </div>
+
+            <div style="background: var(--bg-surface-elevated); padding: 14px 16px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="font-weight: 700; color: #60a5fa; margin-bottom: 4px;">🎙️ STAR Interview Vault</div>
+              <p style="font-size: 12px; color: var(--text-muted);"><code>02_career_and_communication/interview_prep/scrum_lifecycle_star_scripts.md</code></p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1492,7 +1875,7 @@ Transcript: [PASTE RAW TRANSCRIPT / NOTES HERE]</div>
       card.classList.toggle('open');
     }
 
-    // Copy Text to Clipboard & Trigger Toast
+    // Generic Copy Text
     function copyText(elementId) {
       const el = document.getElementById(elementId);
       if (!el) return;
@@ -1507,14 +1890,110 @@ Transcript: [PASTE RAW TRANSCRIPT / NOTES HERE]</div>
       const toastMsg = document.getElementById('toastMsg');
       toastMsg.textContent = message;
       toast.classList.add('show');
-      setTimeout(() => {
-        toast.classList.remove('show');
-      }, 2500);
+      setTimeout(() => { toast.classList.remove('show'); }, 2500);
     }
 
-    function copyEntirePageLink() {
-      navigator.clipboard.writeText(window.location.href).then(() => {
-        showToast("Playbook link copied to clipboard!");
+    // Capacity Calculator Logic
+    function calculateCapacity() {
+      const devs = parseFloat(document.getElementById('numDevs').value) || 0;
+      const days = parseFloat(document.getElementById('sprintDays').value) || 0;
+      const ptoDays = parseFloat(document.getElementById('ptoDays').value) || 0;
+      const ceremonyPct = (parseFloat(document.getElementById('ceremonyPct').value) || 0) / 100;
+      const focusFactor = (parseFloat(document.getElementById('focusFactor').value) || 0) / 100;
+      const hoursPerPt = parseFloat(document.getElementById('hoursPerPt').value) || 6;
+
+      const gross = (devs * days * 8) - (ptoDays * 8);
+      const net = gross * (1 - ceremonyPct);
+      const focus = net * focusFactor;
+      const points = Math.round(focus / hoursPerPt);
+
+      document.getElementById('grossHours').textContent = Math.round(gross) + " hrs";
+      document.getElementById('netHours').textContent = Math.round(net) + " hrs";
+      document.getElementById('focusHours').textContent = Math.round(focus) + " hrs";
+      document.getElementById('recommendedPoints').textContent = "~" + points + " Points";
+    }
+
+    function copyCapacitySummary() {
+      const devs = document.getElementById('numDevs').value;
+      const days = document.getElementById('sprintDays').value;
+      const gross = document.getElementById('grossHours').textContent;
+      const net = document.getElementById('netHours').textContent;
+      const focus = document.getElementById('focusHours').textContent;
+      const points = document.getElementById('recommendedPoints').textContent;
+
+      const summary = `### Sprint Capacity Model (Sprint Planning)
+- **Team Size:** ${devs} engineers | **Sprint Length:** ${days} days
+- **Gross Available Capacity:** ${gross}
+- **Net Available (excl. ceremonies):** ${net}
+- **Focus Engineering Hours:** ${focus}
+- **Empirical Commitment Target:** ${points} (based on ${document.getElementById('focusFactor').value}% focus factor)`;
+
+      navigator.clipboard.writeText(summary).then(() => {
+        showToast("Copied Capacity Summary for Sprint Planning!");
+      });
+    }
+
+    // Jira Ticket Generator Logic
+    function generateJiraTicket() {
+      const role = document.getElementById('ticketRole').value;
+      const goal = document.getElementById('ticketGoal').value;
+      const benefit = document.getElementById('ticketBenefit').value;
+      const happy = document.getElementById('happyPath').value;
+      const edge = document.getElementById('edgeCase').value;
+      const deps = document.getElementById('ticketDependencies').value;
+      const sizing = document.getElementById('ticketSizing').value;
+
+      const output = `h2. User Story
+*As a* ${role}
+*I want to* ${goal}
+*So that* ${benefit}
+
+h2. Acceptance Criteria (Gherkin Format)
+{code:gherkin}
+# Scenario 1 (Happy Path)
+${happy}
+
+# Scenario 2 (Edge / Validation Case)
+${edge}
+{code}
+
+h2. Technical Dependencies & Notes
+* ${deps}
+* Sizing & Governance: ${sizing}
+
+h2. Definition of Ready (DoR) Checklist
+* [x] Persona & business benefit clearly stated
+* [x] Gherkin acceptance criteria defined
+* [x] Dependencies mapped & unblocking path confirmed
+* [x] Estimated within single sprint capacity`;
+
+      navigator.clipboard.writeText(output).then(() => {
+        showToast("Copied Formatted Jira Ticket Description!");
+      });
+    }
+
+    function copyDashboardLayout() {
+      const text = `### Executive Jira Dashboard Layout & JQL Recipe
+1. Sprint Health Gadget (Top Left - 50%)
+2. Sprint Burndown Gadget (Top Right - 50%)
+3. Two-Dimensional Filter (Mid Left - 50%) -> JQL: sprint in openSprints() | X: Assignee | Y: Status
+4. Stale Blocker Alert Filter (Mid Right - 50%) -> JQL: status = "Blocked" AND updated <= -2d
+5. Review Bottleneck Filter -> JQL: status = "In Review" AND updated <= -1d
+6. Mid-Sprint Scope Creep Tracker -> JQL: sprint in openSprints() AND created > "2026-11-01"`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied Jira Dashboard Recipe!");
+      });
+    }
+
+    function copyAutomationsGuide() {
+      const text = `### 5 Power Jira Automations for Agile Teams
+1. Auto-Inject DoR Checklist: Transition to 'Ready for Refinement' -> Append DoR checklist
+2. Stale Blocker Alert: status = "Blocked" AND updated <= -2d -> Send Slack alert to #scrum-blockers
+3. Mid-Sprint Scope Tag: Issue added after sprint start -> Add label 'mid-sprint-injection'
+4. Auto-Close Parent Story: All sub-tasks = 'Done' -> Transition parent to 'Ready for Review'
+5. Auto-Assign QA Reviewer: Status moves to 'Ready for QA' -> Assign to component QA Lead`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("Copied Jira Automations Guide!");
       });
     }
 
@@ -1574,7 +2053,7 @@ Transcript: [PASTE RAW TRANSCRIPT / NOTES HERE]</div>
       });
     });
 
-    // Theme Toggle (Dark / Light)
+    // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const themeLabel = document.getElementById('themeLabel');
@@ -1594,28 +2073,24 @@ Transcript: [PASTE RAW TRANSCRIPT / NOTES HERE]</div>
       }
     });
 
-    // Load saved theme
     if (localStorage.getItem('theme') === 'light') {
       document.documentElement.setAttribute('data-theme', 'light');
       themeIcon.textContent = '🌙';
       themeLabel.textContent = 'Dark Mode';
     }
 
-    // Mobile Menu Toggle
+    // Mobile Menu
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const sidebar = document.getElementById('sidebar');
-    mobileMenuBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
-
-    // Close mobile menu on click
+    mobileMenuBtn.addEventListener('click', () => { sidebar.classList.toggle('open'); });
     document.querySelectorAll('.nav-link').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) {
-          sidebar.classList.remove('open');
-        }
+        if (window.innerWidth <= 900) sidebar.classList.remove('open');
       });
     });
+
+    // Initial capacity calculation on load
+    calculateCapacity();
   </script>
 </body>
 </html>
