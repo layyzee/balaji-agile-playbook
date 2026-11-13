@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agile & Flow Delivery Bible — Executive Cockpit | Balaji Palani</title>
+  <title>Agile Delivery Playbook — Executive Cockpit & Field Guide | Balaji Palani</title>
   
   <!-- Fonts: Newsreader (Editorial Serif), Hanken Grotesk (Clean UI), JetBrains Mono (Metrics & Code) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -102,8 +102,8 @@
 
           <div class="flex flex-col">
             <div class="flex items-center gap-2">
-              <span class="font-serif text-lg font-bold text-ink tracking-tight">Agile &amp; Flow Bible</span>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-forest/10 text-forest border border-forest/20 uppercase tracking-wider">Exec Edition</span>
+              <span class="font-serif text-lg font-bold text-ink tracking-tight">Agile Delivery Playbook</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-forest/10 text-forest border border-forest/20 uppercase tracking-wider">Exec Cockpit</span>
             </div>
             <span class="text-[11px] font-mono text-ink-muted hidden sm:block">Balaji Palani • Senior Scrum Master &amp; Agile Delivery Lead</span>
           </div>
@@ -123,26 +123,31 @@
 
       </div>
 
-      <!-- Navigation Tabs: 4 Dedicated Workspaces -->
+      <!-- Navigation Tabs: 5 Dedicated Workspaces -->
       <div class="flex items-center gap-1 py-2 overflow-x-auto border-t border-sand/60">
-        <button id="tab-btn-forecasting" onclick="switchTab('forecasting')" class="tab-btn tab-active px-4 py-2 rounded-lg text-xs font-medium font-sans flex items-center gap-2 whitespace-nowrap transition-all border border-transparent">
-          <span class="material-symbols-outlined text-[16px]">casino</span>
-          <span>1. Forecasting &amp; Flow Studio</span>
-          <span class="px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-white/20 text-white">Monte Carlo</span>
+        <button id="tab-btn-frameworks" onclick="switchTab('frameworks')" class="tab-btn tab-active px-3.5 py-2 rounded-lg text-xs font-medium font-sans flex items-center gap-1.5 whitespace-nowrap transition-all border border-transparent">
+          <span class="material-symbols-outlined text-[16px]">grid_view</span>
+          <span>1. Frameworks &amp; Field Guide</span>
+          <span class="px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-white/20 text-white">5 Thieves</span>
         </button>
-        <button id="tab-btn-jira" onclick="switchTab('jira')" class="tab-btn px-4 py-2 rounded-lg text-xs font-medium font-sans text-ink-secondary hover:text-ink hover:bg-paper-subtle flex items-center gap-2 whitespace-nowrap transition-all border border-transparent">
+        <button id="tab-btn-forecasting" onclick="switchTab('forecasting')" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium font-sans text-ink-secondary hover:text-ink hover:bg-paper-subtle flex items-center gap-1.5 whitespace-nowrap transition-all border border-transparent">
+          <span class="material-symbols-outlined text-[16px]">casino</span>
+          <span>2. Forecasting &amp; Metrics</span>
+          <span class="px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-forest/10 text-forest">Monte Carlo</span>
+        </button>
+        <button id="tab-btn-jira" onclick="switchTab('jira')" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium font-sans text-ink-secondary hover:text-ink hover:bg-paper-subtle flex items-center gap-1.5 whitespace-nowrap transition-all border border-transparent">
           <span class="material-symbols-outlined text-[16px]">task_alt</span>
-          <span>2. Jira &amp; Quality Gates</span>
+          <span>3. Jira &amp; Quality Gates</span>
           <span class="px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-forest/10 text-forest">DoR / DoD</span>
         </button>
-        <button id="tab-btn-squad" onclick="switchTab('squad')" class="tab-btn px-4 py-2 rounded-lg text-xs font-medium font-sans text-ink-secondary hover:text-ink hover:bg-paper-subtle flex items-center gap-2 whitespace-nowrap transition-all border border-transparent">
+        <button id="tab-btn-squad" onclick="switchTab('squad')" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium font-sans text-ink-secondary hover:text-ink hover:bg-paper-subtle flex items-center gap-1.5 whitespace-nowrap transition-all border border-transparent">
           <span class="material-symbols-outlined text-[16px]">groups</span>
-          <span>3. Squad Cadence &amp; Charter</span>
+          <span>4. Squad Cadence &amp; Charter</span>
           <span class="px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-terracotta/10 text-terracotta">Agreements</span>
         </button>
-        <button id="tab-btn-star" onclick="switchTab('star')" class="tab-btn px-4 py-2 rounded-lg text-xs font-medium font-sans text-ink-secondary hover:text-ink hover:bg-paper-subtle flex items-center gap-2 whitespace-nowrap transition-all border border-transparent">
+        <button id="tab-btn-star" onclick="switchTab('star')" class="tab-btn px-3.5 py-2 rounded-lg text-xs font-medium font-sans text-ink-secondary hover:text-ink hover:bg-paper-subtle flex items-center gap-1.5 whitespace-nowrap transition-all border border-transparent">
           <span class="material-symbols-outlined text-[16px]">psychology</span>
-          <span>4. STAR Interview &amp; Coaching Vault</span>
+          <span>5. STAR Interview &amp; AI Prompts</span>
           <span class="px-1.5 py-0.2 rounded-full text-[9px] font-mono font-bold bg-amber-subtle text-amber">10 Scenarios</span>
         </button>
       </div>
@@ -156,20 +161,176 @@
   <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
     <!-- ==========================================
-         TAB 1: FORECASTING & FLOW STUDIO
+         TAB 1: FRAMEWORKS & FIELD GUIDE
          ========================================== -->
-    <section id="tab-content-forecasting" class="workspace-tab space-y-8">
+    <section id="tab-content-frameworks" class="workspace-tab space-y-8">
       
       <!-- Studio Intro -->
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-sand">
         <div>
           <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase text-forest tracking-wider mb-1">
             <span class="w-2 h-2 rounded-full bg-forest"></span>
-            Probabilistic Delivery Engine
+            Ways of Working (WoW) Field Guide
           </div>
-          <h1 class="font-serif text-3xl font-bold text-ink">Forecasting &amp; Flow Studio</h1>
+          <h1 class="font-serif text-3xl font-bold text-ink">Delivery Frameworks &amp; Field Guide</h1>
           <p class="text-sm text-ink-secondary mt-1 max-w-2xl">
-            Replace fragile single-point deadlines with mathematically validated Monte Carlo simulations, Little's Law WIP controls, and Cumulative Flow Diagram (CFD) telemetry.
+            Objective criteria for selecting Scrum, Kanban, Scrumban, or SAFe®, combined with foundational flow principles from Dominica DeGrandis, Henrik Kniberg, and Mik Kersten.
+          </p>
+        </div>
+        <div class="flex items-center gap-2">
+          <button onclick="runFrameworkQuizModal()" class="px-3.5 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm">
+            <span class="material-symbols-outlined text-[16px]">quiz</span>
+            <span>Framework Matcher Quiz</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Framework Comparison Matrix -->
+      <div class="bg-paper-card border border-sand rounded-xl p-6 shadow-xs">
+        <div class="pb-3 border-b border-sand flex items-center justify-between">
+          <div>
+            <h2 class="font-serif text-lg font-bold text-ink">Framework Decision Matrix</h2>
+            <p class="text-xs text-ink-muted font-mono">Select the optimal operating model based on team dynamics and uncertainty.</p>
+          </div>
+          <span class="text-xs font-mono text-forest bg-forest-subtle px-2 py-0.5 rounded border border-forest/20">Comparative Analysis</span>
+        </div>
+
+        <div class="overflow-x-auto mt-4">
+          <table class="w-full text-xs font-mono text-left">
+            <thead>
+              <tr class="border-b border-sand text-ink-muted text-[11px] uppercase">
+                <th class="py-2.5 px-3">Framework</th>
+                <th class="py-2.5 px-3">Cadence &amp; Iteration</th>
+                <th class="py-2.5 px-3">WIP Governance</th>
+                <th class="py-2.5 px-3">Core Roles</th>
+                <th class="py-2.5 px-3">Change Tolerance</th>
+                <th class="py-2.5 px-3">Best Suited For</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-sand/60">
+              <tr class="hover:bg-paper-subtle transition-colors">
+                <td class="py-3 px-3 font-bold text-forest">Scrum (10-Day Sprint)</td>
+                <td class="py-3 px-3">Fixed 2-week timebox</td>
+                <td class="py-3 px-3">Sprint commitment cap</td>
+                <td class="py-3 px-3">Scrum Master, PO, Dev Team</td>
+                <td class="py-3 px-3">Mid-sprint swaps only</td>
+                <td class="py-3 px-3 font-sans text-ink-secondary">Product roadmaps, greenfield features, cross-functional squads</td>
+              </tr>
+              <tr class="hover:bg-paper-subtle transition-colors">
+                <td class="py-3 px-3 font-bold text-terracotta">Kanban (Continuous Flow)</td>
+                <td class="py-3 px-3">Continuous pull flow</td>
+                <td class="py-3 px-3">Explicit column WIP limits</td>
+                <td class="py-3 px-3">Flow Manager, Service Delivery</td>
+                <td class="py-3 px-3">Real-time dynamic pull</td>
+                <td class="py-3 px-3 font-sans text-ink-secondary">Production support, DevOps / SRE, unpredictable incoming requests</td>
+              </tr>
+              <tr class="hover:bg-paper-subtle transition-colors">
+                <td class="py-3 px-3 font-bold text-amber">Scrumban (Hybrid)</td>
+                <td class="py-3 px-3">Sprints + On-demand pull</td>
+                <td class="py-3 px-3">WIP caps + Sprint backlog</td>
+                <td class="py-3 px-3">Scrum Master / Flow Coach</td>
+                <td class="py-3 px-3">Controlled buffer injection</td>
+                <td class="py-3 px-3 font-sans text-ink-secondary">Maturing teams, maintenance + new feature split, data pipelines</td>
+              </tr>
+              <tr class="hover:bg-paper-subtle transition-colors">
+                <td class="py-3 px-3 font-bold text-ink">SAFe® 6.0 (Scaled Agile)</td>
+                <td class="py-3 px-3">8-12 week PI Cadence</td>
+                <td class="py-3 px-3">Portfolio / ART WIP limits</td>
+                <td class="py-3 px-3">RTE, Product Mgmt, System Arch</td>
+                <td class="py-3 px-3">PI planning alignment</td>
+                <td class="py-3 px-3 font-sans text-ink-secondary">Enterprise multi-squad coordination (50-125+ engineers)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Essential Masterclass: The 5 Thieves of Time -->
+      <div class="bg-paper-card border border-sand rounded-xl p-6 shadow-xs space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-sand">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-terracotta text-[20px]">visibility</span>
+              <h2 class="font-serif text-lg font-bold text-ink">Making Work Visible: The 5 Thieves of Time</h2>
+            </div>
+            <p class="text-xs text-ink-muted font-mono">Dominica DeGrandis • Queuing theory &amp; invisible context-switching hazards.</p>
+          </div>
+          <span class="text-xs font-mono text-terracotta bg-terracotta-subtle px-2 py-0.5 rounded border border-terracotta/20">Flow Diagnostics</span>
+        </div>
+
+        <p class="text-xs text-ink-secondary leading-relaxed">
+          Unseen work is unmanageable. In high-performing engineering squads, delivery delays are rarely caused by slow typing; they are caused by the <strong>5 Thieves of Time</strong> stealing flow in the background:
+        </p>
+
+        <!-- 5 Thieves Interactive Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-3 pt-1">
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Too Much WIP', 'WIP is a silent killer of productivity. When engineers multitask across 4 tickets, context-switching consumes up to 80% of true cognitive capacity.')">
+            <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 1</span>
+            <span class="font-bold text-ink text-xs block mt-1">Too Much WIP</span>
+            <p class="text-[11px] text-ink-secondary mt-1">Too many items in progress; leads to cognitive thrashing and delayed lead times.</p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Unknown Dependencies', 'Dependencies are the biggest blind spot in software delivery. An invisible blocked API call can freeze a 2-week sprint overnight.')">
+            <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 2</span>
+            <span class="font-bold text-ink text-xs block mt-1">Unknown Dependencies</span>
+            <p class="text-[11px] text-ink-secondary mt-1">Waiting on architecture, external vendor stubs, or security audit sign-offs.</p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Unplanned Work', 'Unplanned work is an emergency that displaces planned commitments. If everything is an emergency, nothing is a priority.')">
+            <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 3</span>
+            <span class="font-bold text-ink text-xs block mt-1">Unplanned Work</span>
+            <p class="text-[11px] text-ink-secondary mt-1">Emergency production defects, side requests, or mid-sprint scope injections.</p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Conflicting Priorities', 'When everything is Priority #1, developers are forced to make secret prioritization choices on their own without business alignment.')">
+            <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 4</span>
+            <span class="font-bold text-ink text-xs block mt-1">Conflicting Priorities</span>
+            <p class="text-[11px] text-ink-secondary mt-1">Competing goals between Product, Engineering Debt, and Customer Support.</p>
+          </div>
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Neglected Work', 'Unaddressed technical debt and ignored automated tests are debts that always come due—with punitive compound interest.')">
+            <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 5</span>
+            <span class="font-bold text-ink text-xs block mt-1">Neglected Work</span>
+            <p class="text-[11px] text-ink-secondary mt-1">Postponed refactorings, skipped automated tests, and stale documentation.</p>
+          </div>
+        </div>
+
+        <div id="thief-quote-box" class="p-3.5 rounded-lg bg-paper-subtle border border-sand text-xs italic font-serif text-ink">
+          💡 Click any Thief card above to view Dominica DeGrandis' diagnosis and actionable coach resolution.
+        </div>
+      </div>
+
+      <!-- Essential Masterclass: Henrik Kniberg & Mik Kersten -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-paper-card border border-sand rounded-xl p-6 shadow-xs space-y-2.5">
+          <span class="text-[10px] font-mono uppercase font-bold text-forest bg-forest-subtle px-2 py-0.5 rounded border border-forest/20">Scrum and XP from the Trenches</span>
+          <h3 class="font-serif text-base font-bold text-ink">Henrik Kniberg's Pragmatic Delivery Principles</h3>
+          <p class="text-xs text-ink-secondary leading-relaxed">
+            Pure theoretical Scrum fails without Extreme Programming (XP) technical disciplines. Kniberg established that autonomous squads thrive when sprint backlogs are treated as locked commitments, combined with <strong>pair programming, test-driven spikes, and definition of done</strong> enforced at every pull request boundary.
+          </p>
+        </div>
+        <div class="bg-paper-card border border-sand rounded-xl p-6 shadow-xs space-y-2.5">
+          <span class="text-[10px] font-mono uppercase font-bold text-forest bg-forest-subtle px-2 py-0.5 rounded border border-forest/20">Project to Product</span>
+          <h3 class="font-serif text-base font-bold text-ink">Dr. Mik Kersten's Flow Framework</h3>
+          <p class="text-xs text-ink-secondary leading-relaxed">
+            Software delivery must be measured by business value flow rather than proxy activities. Track the 4 Flow Metrics across all value streams: <strong>Flow Velocity</strong> (features shipped), <strong>Flow Time</strong> (ideation to production), <strong>Flow Efficiency</strong> (active work vs wait states), and <strong>Flow Load</strong> (total concurrent WIP).
+          </p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==========================================
+         TAB 2: FORECASTING & METRICS ACADEMY
+         ========================================== -->
+    <section id="tab-content-forecasting" class="workspace-tab hidden space-y-8">
+      
+      <!-- Studio Intro -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 pb-4 border-b border-sand">
+        <div>
+          <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase text-forest tracking-wider mb-1">
+            <span class="w-2 h-2 rounded-full bg-forest"></span>
+            Probabilistic Delivery Engine &amp; Chart Diagnostics
+          </div>
+          <h1 class="font-serif text-3xl font-bold text-ink">Forecasting &amp; Metrics Academy</h1>
+          <p class="text-sm text-ink-secondary mt-1 max-w-2xl">
+            Execute 1,000 Monte Carlo simulation runs, diagnose visual burndown anti-patterns, and balance sprint capacity using Little's Law flow telemetry.
           </p>
         </div>
         <div class="flex items-center gap-2">
@@ -180,7 +341,7 @@
         </div>
       </div>
 
-      <!-- Grid: Monte Carlo Simulator + Milestone Gauges -->
+      <!-- Monte Carlo Simulation Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
         
         <!-- Controls Column (5 cols) -->
@@ -326,6 +487,73 @@
 
       </div>
 
+      <!-- Diagnosing Visual Delivery Charts (Burndown Anti-Patterns) -->
+      <div class="bg-paper-card border border-sand rounded-xl p-6 shadow-xs">
+        <div class="pb-3 border-b border-sand flex items-center justify-between">
+          <div>
+            <h2 class="font-serif text-lg font-bold text-ink">Diagnosing Visual Delivery Charts</h2>
+            <p class="text-xs text-ink-muted font-mono">Spot team dysfunction in Sprint Burndowns days before sprint review.</p>
+          </div>
+          <span class="text-xs font-mono text-forest bg-forest-subtle px-2 py-0.5 rounded border border-forest/20">Anti-Pattern Diagnostics</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+          
+          <!-- Anti-pattern 1: The Cliffhanger -->
+          <div class="p-4 rounded-lg bg-paper-subtle border border-sand space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-ink text-xs">1. The Cliffhanger</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-terracotta-subtle text-terracotta font-bold">High Risk</span>
+            </div>
+            <p class="text-[11px] text-ink-secondary">Zero points burned down for 9 days, then a vertical drop on Day 10.</p>
+            <div class="p-2 rounded bg-paper-card border border-sand/80 text-[10px] font-mono text-ink-muted space-y-1">
+              <div><strong class="text-ink">Root Cause:</strong> Giant stories; batch testing.</div>
+              <div><strong class="text-forest">Coach Cure:</strong> Slice stories &le; 3 days; test as you go.</div>
+            </div>
+          </div>
+
+          <!-- Anti-pattern 2: The Flatliner -->
+          <div class="p-4 rounded-lg bg-paper-subtle border border-sand space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-ink text-xs">2. The Flatliner</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-terracotta-subtle text-terracotta font-bold">Blocked</span>
+            </div>
+            <p class="text-[11px] text-ink-secondary">Remaining points stay completely horizontal throughout the entire sprint.</p>
+            <div class="p-2 rounded bg-paper-card border border-sand/80 text-[10px] font-mono text-ink-muted space-y-1">
+              <div><strong class="text-ink">Root Cause:</strong> Hidden external dependency deadlock.</div>
+              <div><strong class="text-forest">Coach Cure:</strong> Trigger decoupling spike; stub APIs.</div>
+            </div>
+          </div>
+
+          <!-- Anti-pattern 3: The Staircase of Doom -->
+          <div class="p-4 rounded-lg bg-paper-subtle border border-sand space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-ink text-xs">3. The Staircase of Doom</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-subtle text-amber font-bold">Scope Creep</span>
+            </div>
+            <p class="text-[11px] text-ink-secondary">Line steps UP repeatedly mid-sprint as scope is silently injected.</p>
+            <div class="p-2 rounded bg-paper-card border border-sand/80 text-[10px] font-mono text-ink-muted space-y-1">
+              <div><strong class="text-ink">Root Cause:</strong> PO adds unrefined tickets mid-sprint.</div>
+              <div><strong class="text-forest">Coach Cure:</strong> Enforce 1-in-1-out trade-off rule.</div>
+            </div>
+          </div>
+
+          <!-- Anti-pattern 4: The Late Surge -->
+          <div class="p-4 rounded-lg bg-paper-subtle border border-sand space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="font-bold text-ink text-xs">4. The Late Surge</span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-subtle text-amber font-bold">QA Bottleneck</span>
+            </div>
+            <p class="text-[11px] text-ink-secondary">Dev finishes early, but QA column overflows and burns down late.</p>
+            <div class="p-2 rounded bg-paper-card border border-sand/80 text-[10px] font-mono text-ink-muted space-y-1">
+              <div><strong class="text-ink">Root Cause:</strong> Mini-waterfall inside the sprint.</div>
+              <div><strong class="text-forest">Coach Cure:</strong> Devs write automated tests; swarm QA.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       <!-- Section: Little's Law WIP & CFD Telemetry -->
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-4">
         
@@ -402,15 +630,11 @@
 
             <div class="mt-4 h-40 w-full bg-paper-subtle rounded-lg p-3 relative overflow-hidden border border-sand flex items-center justify-center">
               <svg id="cfd-svg" class="w-full h-full" viewBox="0 0 400 120" preserveAspectRatio="none">
-                <!-- Grid lines -->
                 <line x1="0" y1="30" x2="400" y2="30" stroke="#E5DFD5" stroke-dasharray="3,3" />
                 <line x1="0" y1="60" x2="400" y2="60" stroke="#E5DFD5" stroke-dasharray="3,3" />
                 <line x1="0" y1="90" x2="400" y2="90" stroke="#E5DFD5" stroke-dasharray="3,3" />
-                <!-- Area between arrivals and departures (WIP) -->
                 <path id="cfd-wip-area" d="M 0,110 L 100,85 L 200,60 L 300,35 L 400,10 L 400,30 L 300,55 L 200,80 L 100,100 L 0,115 Z" fill="#234F3A" fill-opacity="0.12" />
-                <!-- Arrivals line -->
                 <path id="cfd-arrival-line" d="M 0,110 L 100,85 L 200,60 L 300,35 L 400,10" fill="none" stroke="#234F3A" stroke-width="2.5" />
-                <!-- Departures line -->
                 <path id="cfd-departure-line" d="M 0,115 L 100,100 L 200,80 L 300,55 L 400,30" fill="none" stroke="#C26447" stroke-width="2.5" />
               </svg>
             </div>
@@ -438,7 +662,7 @@
     </section>
 
     <!-- ==========================================
-         TAB 2: JIRA & QUALITY GATES
+         TAB 3: JIRA & QUALITY GATES
          ========================================== -->
     <section id="tab-content-jira" class="workspace-tab hidden space-y-8">
       
@@ -447,11 +671,11 @@
         <div>
           <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase text-forest tracking-wider mb-1">
             <span class="w-2 h-2 rounded-full bg-forest"></span>
-            Engineering Quality Contracts
+            Engineering Quality Contracts &amp; Automation
           </div>
           <h1 class="font-serif text-3xl font-bold text-ink">Jira &amp; Quality Gates Engine</h1>
           <p class="text-sm text-ink-secondary mt-1 max-w-2xl">
-            Automate production-grade user stories with Gherkin acceptance criteria, audit Definition of Ready (DoR) and Done (DoD) compliance, and rank epics using WSJF.
+            Automate production-grade user stories with Gherkin acceptance criteria, audit Definition of Ready (DoR) and Done (DoD) compliance, and enforce Little's Law with 6 power Jira automations.
           </p>
         </div>
         <div class="flex items-center gap-2">
@@ -530,6 +754,87 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- 6 Power Jira Automations (NEW) -->
+      <div class="bg-paper-card border border-sand rounded-xl p-6 shadow-xs space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-sand">
+          <div>
+            <h2 class="font-serif text-lg font-bold text-ink">6 Power Jira Automations</h2>
+            <p class="text-xs text-ink-muted font-mono">Enforce Little's Law and eliminate status friction automatically in Jira.</p>
+          </div>
+          <span class="text-xs font-mono text-forest bg-forest-subtle px-2 py-0.5 rounded border border-forest/20">Jira Automation Rules</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs font-mono">
+          
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">1. Blocker SLA Alert (&gt;24h)</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">When ticket marked "Flagged", trigger Slack alert if unassigned for 24h.</p>
+            </div>
+            <div class="p-2 bg-paper-card rounded border border-sand/80 text-[10px] flex items-center justify-between">
+              <code>status = 'Blocked' AND updated &lt;= -24h</code>
+              <button onclick="copyText('status = 'Blocked' AND updated <= -24h')" class="text-forest hover:underline">Copy</button>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">2. Subtask Status Auto-Rollup</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">When all child subtasks move to 'Done', auto-transition parent story to 'In Review'.</p>
+            </div>
+            <div class="p-2 bg-paper-card rounded border border-sand/80 text-[10px] flex items-center justify-between">
+              <code>issue.subtasks.every(s =&gt; s.status == 'Done')</code>
+              <button onclick="copyText('issue.subtasks.every(s => s.status == 'Done')')" class="text-forest hover:underline">Copy</button>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">3. WIP Limit Cap Trigger</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">Alert Scrum Master if any single developer has &gt; 2 stories in active 'In Progress'.</p>
+            </div>
+            <div class="p-2 bg-paper-card rounded border border-sand/80 text-[10px] flex items-center justify-between">
+              <code>assignee = currentUser() AND status = 'In Dev'</code>
+              <button onclick="copyText('assignee = currentUser() AND status = 'In Dev'')" class="text-forest hover:underline">Copy</button>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">4. PR Review SLA Warning</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">Ping review channel if ticket remains in 'Peer Review' for more than 4 business hours.</p>
+            </div>
+            <div class="p-2 bg-paper-card rounded border border-sand/80 text-[10px] flex items-center justify-between">
+              <code>status = 'Review' AND status changed to 'Review' before -4h</code>
+              <button onclick="copyText('status = 'Review' AND status changed to 'Review' before -4h')" class="text-forest hover:underline">Copy</button>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">5. Mid-Sprint Scope Creep Tag</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">Auto-tag stories added after Sprint Kickoff Day 1 as 'scope-injection' for retro analysis.</p>
+            </div>
+            <div class="p-2 bg-paper-card rounded border border-sand/80 text-[10px] flex items-center justify-between">
+              <code>labels += 'scope-creep'</code>
+              <button onclick="copyText('labels += 'scope-creep'')" class="text-forest hover:underline">Copy</button>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">6. Zero-Spillover Audit Flag</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">On Sprint Close, auto-extract uncompleted stories into a retrospective spillover report.</p>
+            </div>
+            <div class="p-2 bg-paper-card rounded border border-sand/80 text-[10px] flex items-center justify-between">
+              <code>Sprint in closedSprints() AND status != Done</code>
+              <button onclick="copyText('Sprint in closedSprints() AND status != Done')" class="text-forest hover:underline">Copy</button>
+            </div>
+          </div>
+
+        </div>
       </div>
 
       <!-- DoR & DoD Audit Checklists (Side by Side) -->
@@ -656,7 +961,7 @@
     </section>
 
     <!-- ==========================================
-         TAB 3: SQUAD CADENCE & CHARTER
+         TAB 4: SQUAD CADENCE & CHARTER
          ========================================== -->
     <section id="tab-content-squad" class="workspace-tab hidden space-y-8">
       
@@ -788,7 +1093,7 @@
     </section>
 
     <!-- ==========================================
-         TAB 4: STAR INTERVIEW & COACHING VAULT
+         TAB 5: STAR INTERVIEW & AI PROMPTS
          ========================================== -->
     <section id="tab-content-star" class="workspace-tab hidden space-y-8">
       
@@ -797,11 +1102,11 @@
         <div>
           <div class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase text-forest tracking-wider mb-1">
             <span class="w-2 h-2 rounded-full bg-forest"></span>
-            Executive Presence &amp; STAR Simulator
+            Executive Presence, STAR Simulator &amp; AI Prompt Vault
           </div>
-          <h1 class="font-serif text-3xl font-bold text-ink">STAR Interview &amp; Coaching Vault</h1>
+          <h1 class="font-serif text-3xl font-bold text-ink">STAR Interview &amp; AI Prompts</h1>
           <p class="text-sm text-ink-secondary mt-1 max-w-2xl">
-            10 production-tested crisis scenarios across every phase of the Scrum lifecycle, complete with high-status executive model answers and 4-tier evaluation rubrics.
+            10 production-tested crisis scenarios across every phase of the Scrum lifecycle, executive phrasing guides, and copy-paste production AI prompts for agile coaches.
           </p>
         </div>
         <div class="flex items-center gap-2">
@@ -919,9 +1224,99 @@
         </div>
       </div>
 
+      <!-- Production AI Prompts Vault (NEW) -->
+      <div class="bg-paper-card border border-sand rounded-xl p-6 shadow-xs space-y-4">
+        <div class="flex items-center justify-between pb-3 border-b border-sand">
+          <div>
+            <h3 class="font-serif text-lg font-bold text-ink">Production AI Prompts for Agile Delivery</h3>
+            <p class="text-xs text-ink-muted font-mono">Battle-tested prompts for INVEST story refinement, retro summarization, and executive briefs.</p>
+          </div>
+          <span class="text-xs font-mono text-forest bg-forest-subtle px-2 py-0.5 rounded border border-forest/20">Prompt Vault</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-mono">
+          
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">1. INVEST User Story Slicer</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">Turns vague requirements into vertical, sliceable BDD stories with Gherkin criteria.</p>
+            </div>
+            <button onclick="copyAiPrompt('invest')" class="py-1.5 px-3 bg-paper-card border border-sand hover:border-forest text-forest rounded text-[11px] flex items-center justify-between">
+              <span>Copy INVEST Prompt</span>
+              <span class="material-symbols-outlined text-[14px]">content_copy</span>
+            </button>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">2. Retro Root-Cause Extractor</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">Extracts systemic root causes and generates exactly ONE actionable experiment.</p>
+            </div>
+            <button onclick="copyAiPrompt('retro')" class="py-1.5 px-3 bg-paper-card border border-sand hover:border-forest text-forest rounded text-[11px] flex items-center justify-between">
+              <span>Copy Retro Prompt</span>
+              <span class="material-symbols-outlined text-[14px]">content_copy</span>
+            </button>
+          </div>
+
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand space-y-2 flex flex-col justify-between">
+            <div>
+              <span class="font-bold text-ink block font-sans">3. Executive SteerCo Status Brief</span>
+              <p class="text-[11px] text-ink-secondary font-sans mt-0.5">Translates sprint metrics into business outcomes, P85 forecasts, and blocker trade-offs.</p>
+            </div>
+            <button onclick="copyAiPrompt('exec')" class="py-1.5 px-3 bg-paper-card border border-sand hover:border-forest text-forest rounded text-[11px] flex items-center justify-between">
+              <span>Copy Exec Brief Prompt</span>
+              <span class="material-symbols-outlined text-[14px]">content_copy</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
     </section>
 
   </main>
+
+  <!-- ==========================================
+       MODAL: FRAMEWORK MATCHER QUIZ
+       ========================================== -->
+  <div id="quiz-modal" class="fixed inset-0 z-50 bg-ink/40 backdrop-blur-xs flex items-center justify-center p-4 hidden">
+    <div class="bg-paper-card border border-sand rounded-xl max-w-lg w-full p-6 shadow-xl space-y-4">
+      <div class="flex items-center justify-between pb-3 border-b border-sand">
+        <h3 class="font-serif text-lg font-bold text-ink">Framework Matcher Quiz</h3>
+        <button onclick="closeQuizModal()" class="text-ink-muted hover:text-ink">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div>
+          <label class="font-medium text-ink block mb-1">1. How predictable is incoming work?</label>
+          <select id="quiz-q1" class="w-full font-mono p-2 bg-paper-subtle border border-sand rounded text-ink">
+            <option value="planned">Planned roadmaps with clear sprint deliverables</option>
+            <option value="unpredictable">Continuous stream of urgent bugs, support, or alerts</option>
+            <option value="hybrid">50% roadmap features + 50% ad-hoc operational requests</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="font-medium text-ink block mb-1">2. How large is your engineering team?</label>
+          <select id="quiz-q2" class="w-full font-mono p-2 bg-paper-subtle border border-sand rounded text-ink">
+            <option value="single">Single cross-functional squad (4-9 engineers)</option>
+            <option value="multi">Multiple synchronized squads (50-100+ engineers on an ART)</option>
+          </select>
+        </div>
+
+        <button onclick="evaluateQuiz()" class="w-full py-2 bg-forest hover:bg-forest-hover text-white rounded font-mono font-bold text-xs mt-2">
+          Calculate Recommended Framework
+        </button>
+
+        <div id="quiz-result" class="hidden p-3 rounded bg-forest-subtle border border-forest/30 text-xs">
+          <span class="font-bold text-forest block uppercase text-[10px]">Recommendation:</span>
+          <p id="quiz-result-text" class="text-ink font-semibold mt-0.5"></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ==========================================
        FOOTER
@@ -981,7 +1376,41 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // --- Tab 1: Monte Carlo Simulation ---
+    // --- Tab 1: Frameworks & Thieves ---
+    function showThiefQuote(thief, quote) {
+      const box = document.getElementById('thief-quote-box');
+      if (box) {
+        box.innerHTML = `<strong>Dominica DeGrandis on ${thief}:</strong> "${quote}"`;
+      }
+    }
+
+    function runFrameworkQuizModal() {
+      document.getElementById('quiz-modal').classList.remove('hidden');
+    }
+
+    function closeQuizModal() {
+      document.getElementById('quiz-modal').classList.add('hidden');
+    }
+
+    function evaluateQuiz() {
+      const q1 = document.getElementById('quiz-q1').value;
+      const q2 = document.getElementById('quiz-q2').value;
+      const res = document.getElementById('quiz-result');
+      const text = document.getElementById('quiz-result-text');
+
+      if (q2 === 'multi') {
+        text.textContent = 'SAFe® 6.0 (Scaled Agile Framework) — Ideal for multi-squad enterprise ART alignment across 50+ engineers.';
+      } else if (q1 === 'unpredictable') {
+        text.textContent = 'Kanban (Continuous Pull) — Best for DevOps, SRE, and production support where work arrives dynamically without sprint batching.';
+      } else if (q1 === 'hybrid') {
+        text.textContent = 'Scrumban (Hybrid Cadence) — Combines sprint boundaries with explicit WIP limits for maintenance + feature squads.';
+      } else {
+        text.textContent = 'Scrum (10-Day Sprint Cadence) — Highest velocity for cross-functional product squads delivering against roadmap goals.';
+      }
+      res.classList.remove('hidden');
+    }
+
+    // --- Tab 2: Monte Carlo Simulation ---
     let currentScope = 60;
     let currentChurn = 15;
 
@@ -1011,7 +1440,7 @@
     function runMonteCarloSimulation() {
       const thInput = document.getElementById('throughput-input').value;
       const throughputs = thInput.split(',').map(s => parseFloat(s.trim())).filter(n => !isNaN(n) && n > 0);
-      if (checkEmpty(throughputs)) return;
+      if (!throughputs || throughputs.length === 0) return;
 
       const totalItems = Math.round(currentScope * (1 + currentChurn / 100));
       const runs = 1000;
@@ -1058,10 +1487,6 @@
       // Update Script
       const scriptBox = document.getElementById('executive-script-text');
       scriptBox.innerHTML = `"We analyzed our rolling delivery throughput across 1,000 Monte Carlo simulation runs starting from <strong>${baseDate.toLocaleDateString('en-US', opt)}</strong>. Rather than promising a single fragile date, our team forecasts with <strong>85% confidence</strong> that our target scope of ${currentScope} items will conclude by <strong>${dateP85.toLocaleDateString('en-US', opt)} (Sprint ${p85.toFixed(1)})</strong>. For a high-assurance contractual guarantee, the P95 commitment is <strong>${dateP95.toLocaleDateString('en-US', opt)}</strong>."`;
-    }
-
-    function checkEmpty(arr) {
-      return !arr || arr.length === 0;
     }
 
     function renderHistogram(durations, p50, p85, p95) {
@@ -1135,7 +1560,7 @@
       updateLittlesLaw();
     }
 
-    // --- Tab 2: Jira Generator ---
+    // --- Tab 3: Jira Generator ---
     function updateJiraPreview() {
       const role = document.getElementById('jira-role').value;
       const action = document.getElementById('jira-action').value;
@@ -1196,6 +1621,12 @@ h3. Engineering Quality Gates (DoR Verified)
       const text = document.getElementById('jira-preview-box').textContent;
       navigator.clipboard.writeText(text).then(() => {
         showToast('Jira ticket copied to clipboard!');
+      });
+    }
+
+    function copyText(str) {
+      navigator.clipboard.writeText(str).then(() => {
+        showToast('Copied to clipboard: ' + str);
       });
     }
 
@@ -1271,13 +1702,13 @@ h3. Engineering Quality Gates (DoR Verified)
       });
     }
 
-    // --- Tab 3: Squad Working Agreements ---
+    // --- Tab 4: Squad Working Agreements ---
     const agreements = [
       { title: 'Core Hours (10 AM - 3 PM IST)', desc: 'Synchronous cross-functional touchpoints strictly within core band; morning hours preserved for flow.' },
-      { title: 'Pull Request SLA &lt; 4h', desc: 'Code review turnaround under 4 working hours; PR size capped at 300 lines to avoid cognitive fatigue.' },
-      { title: 'Standup Discipline &lt; 15 mins', desc: 'Strict timebox: blockers swarmed post-scrum; zero operational status monologues.' },
+      { title: 'Pull Request SLA < 4h', desc: 'Code review turnaround under 4 working hours; PR size capped at 300 lines to avoid cognitive fatigue.' },
+      { title: 'Standup Discipline < 15 mins', desc: 'Strict timebox: blockers swarmed post-scrum; zero operational status monologues.' },
       { title: 'Cameras On for Retros', desc: 'Fosters deep psychological safety and visual empathy during retro root-cause debriefs.' },
-      { title: 'Never Suffer in Silence &gt; 2h', desc: 'If blocked for more than 120 minutes, summon a squad swarm; no lone-wolf rabbit holes.' },
+      { title: 'Never Suffer in Silence > 2h', desc: 'If blocked for more than 120 minutes, summon a squad swarm; no lone-wolf rabbit holes.' },
       { title: 'Definition of Ready Enforced', desc: 'Stories without Gherkin criteria and clear mockups cannot enter sprint commitment.' },
       { title: 'No Friday Late Deploys', desc: 'Production shipments restricted to Monday through Thursday before 2 PM.' },
       { title: 'Retrospective Prime Directive', desc: 'Read aloud before inspecting mistakes: assume everyone did the best they could.' }
@@ -1448,7 +1879,7 @@ h3. Engineering Quality Gates (DoR Verified)
       });
     }
 
-    // --- Tab 4: STAR Scenarios & Practice ---
+    // --- Tab 5: STAR Scenarios & Practice ---
     const scenarios = [
       {
         id: 1,
@@ -1553,7 +1984,6 @@ h3. Engineering Quality Gates (DoR Verified)
     ];
 
     let currentScenarioIdx = 0;
-    let modelAnswerVisible = false;
 
     function renderScenarios() {
       const list = document.getElementById('scenarios-list');
@@ -1690,15 +2120,70 @@ Result: ${sc.r}`;
       }
     }
 
+    // --- AI Prompts Vault ---
+    const aiPrompts = {
+      invest: `You are an expert Agile Coach and Senior Product Owner assistant.
+
+I will provide a rough requirement, draft ticket, or customer problem statement.
+Your task is to refine it into a production-ready User Story that adheres strictly to the INVEST criteria (Independent, Negotiable, Valuable, Estimable, Small, Testable).
+
+Format your response as:
+1. User Story (As a... I want to... So that...)
+2. INVEST Evaluation & Slicing Advice
+3. Acceptance Criteria in BDD Gherkin Syntax (Given-When-Then)
+4. Technical Considerations & Open Questions for PO.
+
+Here is the raw requirement: [PASTE REQUIREMENT]`,
+      retro: `You are an executive Agile Coach facilitating a root-cause sprint retrospective.
+
+I will paste raw feedback comments from our squad's latest sprint retro.
+Your task is to:
+1. Categorize feedback across the 5 Thieves of Time (Too Much WIP, Unknown Dependencies, Unplanned Work, Conflicting Priorities, Neglected Work).
+2. Apply the 5-Whys methodology to identify the single deepest structural bottleneck.
+3. Propose exactly ONE measurable Kaizen experiment for the upcoming sprint with clear success metrics.
+
+Here is the raw feedback: [PASTE FEEDBACK]`,
+      exec: `You are a Principal Agile Delivery Lead preparing a high-status bi-weekly SteerCo executive briefing.
+
+I will provide our squad's raw delivery metrics (sprint velocity, spillover rate, blocked hours, and Monte Carlo P85 forecast).
+Your task is to draft an executive update for VP and Director-level stakeholders:
+- Highlight business ROI delivered rather than story points.
+- Frame spillover risks around trade-offs and quality protection.
+- Present our P85 and P95 delivery date confidence milestones.
+- Tone: Confident, quantitative, proactive, zero excuses.
+
+Here are our metrics: [PASTE METRICS]`
+    };
+
+    function copyAiPrompt(type) {
+      const prompt = aiPrompts[type];
+      if (prompt) {
+        navigator.clipboard.writeText(prompt).then(() => {
+          showToast(`AI prompt for ${type.toUpperCase()} copied to clipboard!`);
+        });
+      }
+    }
+
     function exportPlaybookDigest() {
-      const digest = `# AGILE & FLOW DELIVERY BIBLE (EXECUTIVE EDITION)
+      const digest = `# AGILE DELIVERY PLAYBOOK (EXECUTIVE EDITION)
 ` +
         `Author: Balaji Palani (Senior Scrum Master & Agile Delivery Lead)
 ` +
         `Published: ${new Date().toLocaleDateString('en-US')}
 
 ` +
-        `## 1. Monte Carlo Probabilistic Forecasting
+        `## 1. Delivery Frameworks & Decision Criteria
+` +
+        `- Scrum: 10-day sprint cadence for cross-functional product squads.
+` +
+        `- Kanban: Continuous pull flow for DevOps, support, and SRE.
+` +
+        `- Scrumban: Sprint timeboxes + strict column WIP limits.
+` +
+        `- SAFe® 6.0: Scaled alignment across multi-squad Agile Release Trains.
+
+` +
+        `## 2. Monte Carlo Probabilistic Forecasting
 ` +
         `- Method: 1,000 randomized simulation runs over historical throughput.
 ` +
@@ -1707,21 +2192,21 @@ Result: ${sc.r}`;
         `- P95 Hard SLA: Contractual and regulatory boundary.
 
 ` +
-        `## 2. Flow Governance & Little's Law
+        `## 3. Flow Governance & Little's Law
 ` +
         `- Cycle Time = WIP / Throughput.
 ` +
         `- WIP limits directly prevent cognitive switching delays and context loss.
 
 ` +
-        `## 3. Engineering Quality Gates
+        `## 4. Engineering Quality Gates
 ` +
         `- DoR: INVEST criteria, Gherkin BDD scenarios, mocked contracts.
 ` +
         `- DoD: Unit tests >= 85%, green CI/CD, PO acceptance in staging.
 
 ` +
-        `## 4. Retrospective Prime Directive (Norm Kerth)
+        `## 5. Retrospective Prime Directive (Norm Kerth)
 ` +
         `> "Regardless of what we discover, we understand and truly believe that everyone did the best job they could..."
 `;
