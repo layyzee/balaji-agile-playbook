@@ -217,63 +217,67 @@
   <header class="sticky top-0 z-50 bg-paper/95 backdrop-blur-md border-b border-sand shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Top Bar: Brand, Ecosystem Links, GitHub -->
-      <div class="h-16 flex items-center justify-between gap-4">
+      <!-- Top Bar: Brand, Ecosystem Links, GitHub (Responsive & Collision-Free) -->
+      <div class="h-16 flex items-center justify-between gap-2 sm:gap-4">
         
         <!-- Left: Brand Block & Return Links -->
-        <div class="flex items-center gap-3">
-          <a href="https://layyzee.github.io/" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-ink-secondary hover:text-forest px-2.5 py-1.5 rounded-md bg-paper-subtle border border-sand hover:border-forest/40 transition-colors shadow-xs" title="Return to Balaji's Main Portfolio">
-            <span class="material-symbols-outlined text-[16px]">arrow_back</span>
+        <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+          <a href="https://layyzee.github.io/" class="inline-flex items-center gap-1 sm:gap-1.5 text-xs font-mono font-medium text-ink-secondary hover:text-forest px-2 sm:px-2.5 py-1.5 rounded-md bg-paper-subtle border border-sand hover:border-forest/40 transition-colors shadow-xs shrink-0" title="Return to Balaji's Main Portfolio">
+            <span class="material-symbols-outlined text-[15px]">arrow_back</span>
             <span class="hidden sm:inline">Portfolio</span>
           </a>
-          <a href="https://layyzee.github.io/scrum-master-career-portal/" class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-ink-secondary hover:text-forest px-2.5 py-1.5 rounded-md bg-paper-subtle border border-sand hover:border-forest/40 transition-colors shadow-xs" title="Return to Career Portal Hub">
-            <span class="material-symbols-outlined text-[16px]">hub</span>
-            <span class="hidden md:inline">Career Hub</span>
+          <a href="https://layyzee.github.io/scrum-master-career-portal/" class="hidden md:inline-flex items-center gap-1.5 text-xs font-mono font-medium text-ink-secondary hover:text-forest px-2.5 py-1.5 rounded-md bg-paper-subtle border border-sand hover:border-forest/40 transition-colors shadow-xs shrink-0" title="Return to Career Portal Hub">
+            <span class="material-symbols-outlined text-[15px]">hub</span>
+            <span>Career Hub</span>
           </a>
 
           <div class="h-4 w-px bg-sand hidden sm:block"></div>
 
           <div class="flex flex-col">
-            <div class="flex items-center gap-2">
-              <span class="font-serif text-lg font-bold text-ink tracking-tight">Agile Delivery Playbook</span>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-forest/10 text-forest border border-forest/20 uppercase tracking-wider">Exec Cockpit</span>
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <span class="font-serif text-base sm:text-lg font-bold text-ink tracking-tight truncate max-w-[170px] sm:max-w-none">Agile Playbook</span>
+              <span class="px-1.5 sm:px-2 py-0.5 rounded-full text-[9px] sm:text-[10px] font-mono font-semibold bg-forest/10 text-forest border border-forest/20 uppercase tracking-wider shrink-0">Cockpit</span>
             </div>
-            <span class="text-[11px] font-mono text-ink-muted hidden sm:block">Balaji Palani • Senior Scrum Master &amp; Agile Delivery Lead</span>
+            <span class="text-[10px] sm:text-[11px] font-mono text-ink-muted hidden lg:block">Balaji Palani • Senior Scrum Master &amp; Agile Delivery Lead</span>
           </div>
         </div>
 
-        
-        <!-- Middle: Design Philosophy Switcher (Impeccable vs Amicro) -->
-        <div class="flex items-center gap-1 p-0.5 sm:p-1 rounded-lg bg-paper-subtle border border-sand shadow-xs text-xs font-mono">
-          <button id="btn-mode-impeccable" onclick="setDesignMode('impeccable')" class="switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Impeccable Style: Calm Editorial, Quiet Typography & Restraint">
-            <span class="material-symbols-outlined text-[15px]">menu_book</span>
-            <span class="text-[11px] font-medium hidden sm:inline">Impeccable</span>
-            <span class="text-[9px] text-white/80 hidden md:inline">Calm</span>
-            <span class="text-[11px] sm:hidden font-medium">Calm</span>
-          </button>
-          <button id="btn-mode-amicro" onclick="setDesignMode('amicro')" class="text-ink-secondary hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Amicro Style: Micro-Interactions, Spotlights, 3D Tilt & Tactile Springs">
-            <span class="material-symbols-outlined text-[15px]">auto_awesome</span>
-            <span class="text-[11px] font-medium hidden sm:inline">Amicro</span>
-            <span class="text-[9px] opacity-75 hidden md:inline">Motion</span>
-            <span class="text-[11px] sm:hidden font-medium">Motion</span>
-          </button>
-          <button onclick="openDesignCompareModal()" class="px-2 py-1 rounded-md text-ink-muted hover:text-forest hover:bg-paper-card transition-all flex items-center gap-1 font-medium border border-transparent hover:border-sand" title="Compare Impeccable vs Amicro Philosophies">
-            <span class="material-symbols-outlined text-[15px]">compare_arrows</span>
-            <span class="text-[11px] hidden lg:inline">Compare</span>
-          </button>
-        </div>
+        <!-- Right: Actions & Switcher (Unified, shrink-0, zero clipping) -->
+        <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+          
+          <!-- Desktop Switcher (md:flex) -->
+          <div class="hidden md:flex items-center p-0.5 rounded-lg bg-paper-subtle border border-sand shadow-xs text-xs font-mono">
+            <button id="btn-mode-impeccable" onclick="setDesignMode('impeccable')" class="switcher-btn-active px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium" title="Impeccable: Calm Editorial">
+              <span class="material-symbols-outlined text-[14px]">menu_book</span>
+              <span class="text-[11px]">Calm</span>
+            </button>
+            <button id="btn-mode-amicro" onclick="setDesignMode('amicro')" class="text-ink-secondary hover:text-ink px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium" title="Amicro: Micro-Interactions">
+              <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+              <span class="text-[11px]">Motion</span>
+            </button>
+            <button onclick="openDesignCompareModal()" class="px-1.5 py-1 rounded-md text-ink-muted hover:text-forest transition-all flex items-center" title="Compare Design Philosophies">
+              <span class="material-symbols-outlined text-[14px]">compare_arrows</span>
+            </button>
+          </div>
 
+          <!-- Quick Toggle for Mobile & Small Screens (< md) -->
+          <button id="btn-mode-quick-toggle" onclick="toggleDesignMode()" class="md:hidden h-8 px-2 sm:px-2.5 rounded-md bg-paper-subtle border border-sand shadow-xs flex items-center gap-1 font-mono text-xs transition-colors shrink-0" title="Toggle Design Style (Calm vs Motion)">
+            <span id="quick-toggle-icon" class="material-symbols-outlined text-[15px] text-forest">menu_book</span>
+            <span id="quick-toggle-label" class="text-[10px] font-semibold hidden sm:inline">Calm</span>
+          </button>
 
-        <!-- Right: Actions & Repo Link -->
-        <div class="flex items-center gap-2.5">
-          <a href="https://github.com/layyzee/balaji-agile-playbook" target="_blank" rel="noopener noreferrer" class="h-8 px-3 rounded-md bg-paper-card border border-sand hover:border-forest/40 text-ink text-xs font-mono font-medium flex items-center gap-1.5 transition-colors shadow-xs">
-            <span class="material-symbols-outlined text-[16px]">code</span>
-            <span class="hidden sm:inline">GitHub</span>
+          <!-- GitHub Repo Link -->
+          <a href="https://github.com/layyzee/balaji-agile-playbook" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex h-8 px-2.5 rounded-md bg-paper-card border border-sand hover:border-forest/40 text-ink text-xs font-mono font-medium items-center gap-1.5 transition-colors shadow-xs shrink-0">
+            <span class="material-symbols-outlined text-[15px]">code</span>
+            <span class="hidden md:inline">GitHub</span>
           </a>
-          <button onclick="exportPlaybookDigest()" class="h-8 px-3.5 rounded-md bg-forest hover:bg-forest-hover text-white text-xs font-medium flex items-center gap-1.5 transition-colors shadow-xs amicro-magnetic amicro-ripple-host">
-            <span class="material-symbols-outlined text-[16px]">download</span>
+
+          <!-- Export Playbook Button -->
+          <button onclick="exportPlaybookDigest()" class="h-8 px-2.5 sm:px-3.5 rounded-md bg-forest hover:bg-forest-hover text-white text-xs font-medium flex items-center gap-1.5 transition-colors shadow-xs amicro-magnetic amicro-ripple-host shrink-0">
+            <span class="material-symbols-outlined text-[15px]">download</span>
             <span class="hidden sm:inline">Export</span>
           </button>
+
         </div>
 
       </div>
@@ -2380,52 +2384,65 @@ Here are our metrics: [PASTE METRICS]`
     // ==========================================
     let currentDesignMode = localStorage.getItem('agile_design_mode') || 'impeccable';
 
-    function setDesignMode(mode, showNotification = true) {
-      currentDesignMode = mode;
-      localStorage.setItem('agile_design_mode', mode);
+    function toggleDesignMode() {
+  const nextMode = currentDesignMode === 'impeccable' ? 'amicro' : 'impeccable';
+  setDesignMode(nextMode);
+}
 
-      const root = document.documentElement;
-      const body = document.body;
-      const btnImpeccable = document.getElementById('btn-mode-impeccable');
-      const btnAmicro = document.getElementById('btn-mode-amicro');
+function setDesignMode(mode, showNotification = true) {
+  currentDesignMode = mode;
+  localStorage.setItem('agile_design_mode', mode);
 
-      if (mode === 'amicro') {
-        body.classList.remove('mode-impeccable');
-        body.classList.add('mode-amicro');
+  const root = document.documentElement;
+  const body = document.body;
+  const btnImpeccable = document.getElementById('btn-mode-impeccable');
+  const btnAmicro = document.getElementById('btn-mode-amicro');
+  const quickIcon = document.getElementById('quick-toggle-icon');
+  const quickLabel = document.getElementById('quick-toggle-label');
+  const quickBtn = document.getElementById('btn-mode-quick-toggle');
 
-        if (btnAmicro) {
-          btnAmicro.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
-        }
-        if (btnImpeccable) {
-          btnImpeccable.className = 'text-ink-secondary hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
-        }
+  if (mode === 'amicro') {
+    body.classList.remove('mode-impeccable');
+    body.classList.add('mode-amicro');
 
-        initAmicroListeners();
-        triggerAmicroRollups();
-
-        if (showNotification) {
-          showToast('⚡ Activated Amicro Style (Tactile Micro-Interactions, 3D Tilt & Spotlights)');
-        }
-      } else {
-        body.classList.remove('mode-amicro');
-        body.classList.add('mode-impeccable');
-
-        if (btnImpeccable) {
-          btnImpeccable.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
-        }
-        if (btnAmicro) {
-          btnAmicro.className = 'text-ink-secondary hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
-        }
-
-        resetAmicroTransforms();
-
-        if (showNotification) {
-          showToast('📖 Activated Impeccable Style (Calm Editorial — Quiet Typography & Restraint)');
-        }
-      }
+    if (btnAmicro) {
+      btnAmicro.className = 'switcher-btn-active px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
     }
+    if (btnImpeccable) {
+      btnImpeccable.className = 'text-ink-secondary hover:text-ink px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
+    }
+    if (quickIcon) quickIcon.textContent = 'auto_awesome';
+    if (quickLabel) quickLabel.textContent = 'Motion';
+    if (quickBtn) quickBtn.className = 'md:hidden h-8 px-2 sm:px-2.5 rounded-md bg-forest text-white border border-forest shadow-xs flex items-center gap-1 font-mono text-xs transition-colors shrink-0';
 
-    // Modal controls
+    initAmicroListeners();
+    triggerAmicroRollups();
+
+    if (showNotification) {
+      showToast('⚡ Activated Amicro Style (Tactile Micro-Interactions & 3D Tilt)');
+    }
+  } else {
+    body.classList.remove('mode-amicro');
+    body.classList.add('mode-impeccable');
+
+    if (btnImpeccable) {
+      btnImpeccable.className = 'switcher-btn-active px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
+    }
+    if (btnAmicro) {
+      btnAmicro.className = 'text-ink-secondary hover:text-ink px-2 py-1 rounded-md transition-all flex items-center gap-1 font-medium';
+    }
+    if (quickIcon) quickIcon.textContent = 'menu_book';
+    if (quickLabel) quickLabel.textContent = 'Calm';
+    if (quickBtn) quickBtn.className = 'md:hidden h-8 px-2 sm:px-2.5 rounded-md bg-paper-subtle border border-sand shadow-xs flex items-center gap-1 font-mono text-xs transition-colors shrink-0';
+
+    resetAmicroTransforms();
+
+    if (showNotification) {
+      showToast('📖 Activated Impeccable Style (Calm Editorial & Quiet Restraint)');
+    }
+  }
+}
+
     function openDesignCompareModal() {
       const modal = document.getElementById('design-compare-modal');
       if (modal) {
