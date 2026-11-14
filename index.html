@@ -74,6 +74,139 @@
       border-color: #234F3A !important;
       box-shadow: 0 1px 3px rgba(35, 79, 58, 0.2);
     }
+  
+    /* ========================================================
+       DESIGN SYSTEM ENGINE: IMPECCABLE vs. AMICRO
+       ======================================================== */
+
+    /* Default / Base Card */
+    .interactive-card {
+      position: relative;
+      transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    /* --- 1. IMPECCABLE MODE (Calm Editorial / Distilled Silence) --- */
+    .mode-impeccable .interactive-card:hover {
+      border-color: #BCD1C6;
+      background-color: #FFFFFF;
+    }
+    .mode-impeccable .amicro-tilt {
+      transform: none !important;
+      box-shadow: 0 1px 2px rgba(31, 36, 45, 0.05) !important;
+    }
+    .mode-impeccable .amicro-spotlight::before {
+      display: none !important;
+    }
+    .mode-impeccable .amicro-border-beam::after {
+      display: none !important;
+    }
+
+    /* --- 2. AMICRO MODE (Tactile Micro-Interactions) --- */
+    .mode-amicro {
+      --amicro-spring: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Spotlight Radial Hover */
+    .mode-amicro .amicro-spotlight {
+      position: relative;
+      overflow: hidden;
+    }
+    .mode-amicro .amicro-spotlight::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: radial-gradient(350px circle at var(--mouse-x, -999px) var(--mouse-y, -999px), rgba(35, 79, 58, 0.08), transparent 70%);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      z-index: 2;
+    }
+    .mode-amicro .amicro-spotlight:hover::before {
+      opacity: 1;
+    }
+
+    /* 3D Perspective Tilt on Desktop */
+    @media (hover: hover) and (pointer: fine) {
+      .mode-amicro .amicro-tilt {
+        transform-style: preserve-3d;
+        will-change: transform;
+        transition: transform 0.16s ease-out, box-shadow 0.22s ease;
+      }
+      .mode-amicro .amicro-tilt:hover {
+        box-shadow: 0 16px 36px -12px rgba(31, 36, 45, 0.1), 0 4px 14px -4px rgba(35, 79, 58, 0.08);
+      }
+    }
+
+    /* Magnetic Buttons */
+    .mode-amicro .amicro-magnetic {
+      will-change: transform;
+      transition: transform 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    /* Ripple Click Wave */
+    .amicro-ripple-host {
+      position: relative;
+      overflow: hidden;
+    }
+    .amicro-ripple-wave {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.45);
+      transform: scale(0);
+      animation: amicroRipple 0.55s ease-out forwards;
+      pointer-events: none;
+      z-index: 5;
+    }
+    .amicro-ripple-wave-dark {
+      background: rgba(35, 79, 58, 0.2);
+    }
+    @keyframes amicroRipple {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* Active Tap Haptics */
+    .mode-amicro button:active,
+    .mode-amicro .tab-btn:active,
+    .mode-amicro .interactive-card:active {
+      transform: scale(0.985);
+    }
+
+    /* Border Beam Animation */
+    .mode-amicro .amicro-border-beam {
+      position: relative;
+    }
+    .mode-amicro .amicro-border-beam::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: linear-gradient(90deg, transparent 0%, #234F3A 35%, #C26447 65%, transparent 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: amicroBeamSpin 4.5s linear infinite;
+      pointer-events: none;
+      z-index: 3;
+    }
+    @keyframes amicroBeamSpin {
+      0% { filter: hue-rotate(0deg); }
+      50% { filter: hue-rotate(45deg); }
+      100% { filter: hue-rotate(0deg); }
+    }
+
+    /* Active Switcher Pill */
+    .switcher-btn-active {
+      background-color: #234F3A !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 1px 3px rgba(35, 79, 58, 0.3) !important;
+    }
+
   </style>
 </head>
 <body class="bg-paper min-h-screen flex flex-col antialiased selection:bg-terracotta/20 selection:text-ink">
@@ -109,15 +242,37 @@
           </div>
         </div>
 
+        
+        <!-- Middle: Design Philosophy Switcher (Impeccable vs Amicro) -->
+        <div class="flex items-center gap-1 p-0.5 sm:p-1 rounded-lg bg-paper-subtle border border-sand shadow-xs text-xs font-mono">
+          <button id="btn-mode-impeccable" onclick="setDesignMode('impeccable')" class="switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Impeccable Style: Calm Editorial, Quiet Typography & Restraint">
+            <span class="material-symbols-outlined text-[15px]">menu_book</span>
+            <span class="text-[11px] font-medium hidden sm:inline">Impeccable</span>
+            <span class="text-[9px] text-white/80 hidden md:inline">Calm</span>
+            <span class="text-[11px] sm:hidden font-medium">Calm</span>
+          </button>
+          <button id="btn-mode-amicro" onclick="setDesignMode('amicro')" class="text-ink-secondary hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium" title="Amicro Style: Micro-Interactions, Spotlights, 3D Tilt & Tactile Springs">
+            <span class="material-symbols-outlined text-[15px]">auto_awesome</span>
+            <span class="text-[11px] font-medium hidden sm:inline">Amicro</span>
+            <span class="text-[9px] opacity-75 hidden md:inline">Motion</span>
+            <span class="text-[11px] sm:hidden font-medium">Motion</span>
+          </button>
+          <button onclick="openDesignCompareModal()" class="px-2 py-1 rounded-md text-ink-muted hover:text-forest hover:bg-paper-card transition-all flex items-center gap-1 font-medium border border-transparent hover:border-sand" title="Compare Impeccable vs Amicro Philosophies">
+            <span class="material-symbols-outlined text-[15px]">compare_arrows</span>
+            <span class="text-[11px] hidden lg:inline">Compare</span>
+          </button>
+        </div>
+
+
         <!-- Right: Actions & Repo Link -->
         <div class="flex items-center gap-2.5">
           <a href="https://github.com/layyzee/balaji-agile-playbook" target="_blank" rel="noopener noreferrer" class="h-8 px-3 rounded-md bg-paper-card border border-sand hover:border-forest/40 text-ink text-xs font-mono font-medium flex items-center gap-1.5 transition-colors shadow-xs">
             <span class="material-symbols-outlined text-[16px]">code</span>
             <span class="hidden sm:inline">GitHub</span>
           </a>
-          <button onclick="exportPlaybookDigest()" class="h-8 px-3.5 rounded-md bg-forest hover:bg-forest-hover text-white text-xs font-medium flex items-center gap-1.5 transition-colors shadow-xs">
+          <button onclick="exportPlaybookDigest()" class="h-8 px-3.5 rounded-md bg-forest hover:bg-forest-hover text-white text-xs font-medium flex items-center gap-1.5 transition-colors shadow-xs amicro-magnetic amicro-ripple-host">
             <span class="material-symbols-outlined text-[16px]">download</span>
-            <span>Export Playbook</span>
+            <span class="hidden sm:inline">Export</span>
           </button>
         </div>
 
@@ -264,27 +419,27 @@
 
         <!-- 5 Thieves Interactive Grid -->
         <div class="grid grid-cols-1 md:grid-cols-5 gap-3 pt-1">
-          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Too Much WIP', 'WIP is a silent killer of productivity. When engineers multitask across 4 tickets, context-switching consumes up to 80% of true cognitive capacity.')">
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer interactive-card amicro-spotlight amicro-tilt" onclick="showThiefQuote('Too Much WIP', 'WIP is a silent killer of productivity. When engineers multitask across 4 tickets, context-switching consumes up to 80% of true cognitive capacity.')">
             <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 1</span>
             <span class="font-bold text-ink text-xs block mt-1">Too Much WIP</span>
             <p class="text-[11px] text-ink-secondary mt-1">Too many items in progress; leads to cognitive thrashing and delayed lead times.</p>
           </div>
-          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Unknown Dependencies', 'Dependencies are the biggest blind spot in software delivery. An invisible blocked API call can freeze a 2-week sprint overnight.')">
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer interactive-card amicro-spotlight amicro-tilt" onclick="showThiefQuote('Unknown Dependencies', 'Dependencies are the biggest blind spot in software delivery. An invisible blocked API call can freeze a 2-week sprint overnight.')">
             <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 2</span>
             <span class="font-bold text-ink text-xs block mt-1">Unknown Dependencies</span>
             <p class="text-[11px] text-ink-secondary mt-1">Waiting on architecture, external vendor stubs, or security audit sign-offs.</p>
           </div>
-          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Unplanned Work', 'Unplanned work is an emergency that displaces planned commitments. If everything is an emergency, nothing is a priority.')">
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer interactive-card amicro-spotlight amicro-tilt" onclick="showThiefQuote('Unplanned Work', 'Unplanned work is an emergency that displaces planned commitments. If everything is an emergency, nothing is a priority.')">
             <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 3</span>
             <span class="font-bold text-ink text-xs block mt-1">Unplanned Work</span>
             <p class="text-[11px] text-ink-secondary mt-1">Emergency production defects, side requests, or mid-sprint scope injections.</p>
           </div>
-          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Conflicting Priorities', 'When everything is Priority #1, developers are forced to make secret prioritization choices on their own without business alignment.')">
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer interactive-card amicro-spotlight amicro-tilt" onclick="showThiefQuote('Conflicting Priorities', 'When everything is Priority #1, developers are forced to make secret prioritization choices on their own without business alignment.')">
             <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 4</span>
             <span class="font-bold text-ink text-xs block mt-1">Conflicting Priorities</span>
             <p class="text-[11px] text-ink-secondary mt-1">Competing goals between Product, Engineering Debt, and Customer Support.</p>
           </div>
-          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer" onclick="showThiefQuote('Neglected Work', 'Unaddressed technical debt and ignored automated tests are debts that always come due—with punitive compound interest.')">
+          <div class="p-3.5 rounded-lg bg-paper-subtle border border-sand hover:border-terracotta/50 transition-colors cursor-pointer interactive-card amicro-spotlight amicro-tilt" onclick="showThiefQuote('Neglected Work', 'Unaddressed technical debt and ignored automated tests are debts that always come due—with punitive compound interest.')">
             <span class="text-[10px] font-mono text-terracotta font-bold block uppercase">Thief 5</span>
             <span class="font-bold text-ink text-xs block mt-1">Neglected Work</span>
             <p class="text-[11px] text-ink-secondary mt-1">Postponed refactorings, skipped automated tests, and stale documentation.</p>
@@ -334,7 +489,7 @@
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="runMonteCarloSimulation()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm">
+          <button onclick="runMonteCarloSimulation()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm amicro-magnetic amicro-ripple-host">
             <span class="material-symbols-outlined text-[16px]">play_arrow</span>
             <span>Run 1,000 Simulations</span>
           </button>
@@ -414,7 +569,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             
             <!-- P50 (Coin Flip) -->
-            <div class="bg-paper-card border border-sand rounded-xl p-4 shadow-xs relative overflow-hidden">
+            <div class="bg-paper-card border border-sand rounded-xl p-4 shadow-xs relative overflow-hidden interactive-card amicro-spotlight amicro-tilt">
               <div class="flex items-center justify-between mb-1">
                 <span class="text-xs font-mono font-bold text-amber">P50 Confidence</span>
                 <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-amber-subtle text-amber font-semibold">50% Probable</span>
@@ -425,7 +580,7 @@
             </div>
 
             <!-- P85 (Executive Standard) -->
-            <div class="bg-paper-card border-2 border-forest rounded-xl p-4 shadow-xs relative overflow-hidden bg-gradient-to-b from-forest-subtle/40 to-transparent">
+            <div class="bg-paper-card border-2 border-forest rounded-xl p-4 shadow-xs relative overflow-hidden bg-gradient-to-b from-forest-subtle/40 to-transparent interactive-card amicro-spotlight amicro-tilt amicro-border-beam">
               <div class="flex items-center justify-between mb-1">
                 <span class="text-xs font-mono font-bold text-forest">P85 Recommended</span>
                 <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-forest text-white font-bold">Standard SLA</span>
@@ -436,7 +591,7 @@
             </div>
 
             <!-- P95 (Board Guarantee) -->
-            <div class="bg-paper-card border border-sand rounded-xl p-4 shadow-xs relative overflow-hidden">
+            <div class="bg-paper-card border border-sand rounded-xl p-4 shadow-xs relative overflow-hidden interactive-card amicro-spotlight amicro-tilt">
               <div class="flex items-center justify-between mb-1">
                 <span class="text-xs font-mono font-bold text-terracotta">P95 Hard SLA</span>
                 <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-terracotta-subtle text-terracotta font-semibold">95% Safe</span>
@@ -679,7 +834,7 @@
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="copyJiraTicket()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm">
+          <button onclick="copyJiraTicket()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm amicro-magnetic amicro-ripple-host">
             <span class="material-symbols-outlined text-[16px]">content_copy</span>
             <span>Copy Jira Ticket Markdown</span>
           </button>
@@ -978,7 +1133,7 @@
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="copyCharterMarkdown()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm">
+          <button onclick="copyCharterMarkdown()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm amicro-magnetic amicro-ripple-host">
             <span class="material-symbols-outlined text-[16px]">content_copy</span>
             <span>Copy Charter Markdown</span>
           </button>
@@ -1110,7 +1265,7 @@
           </p>
         </div>
         <div class="flex items-center gap-2">
-          <button onclick="copyCurrentStar()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm">
+          <button onclick="copyCurrentStar()" class="px-4 py-2 bg-forest hover:bg-forest-hover text-white rounded-lg text-xs font-mono font-semibold flex items-center gap-2 transition-colors shadow-sm amicro-magnetic amicro-ripple-host">
             <span class="material-symbols-outlined text-[16px]">content_copy</span>
             <span>Copy Active STAR Response</span>
           </button>
@@ -1417,12 +1572,14 @@
     function updateScope(val) {
       currentScope = parseInt(val);
       document.getElementById('scope-val-badge').textContent = currentScope + ' Stories';
+      setDesignMode(currentDesignMode, false);
       runMonteCarloSimulation();
     }
 
     function updateChurn(val) {
       currentChurn = parseInt(val);
       document.getElementById('churn-val-badge').textContent = '+' + currentChurn + '% Scope Buffer';
+      setDesignMode(currentDesignMode, false);
       runMonteCarloSimulation();
     }
 
@@ -1434,6 +1591,7 @@
       } else if (preset === 'high-velocity') {
         document.getElementById('throughput-input').value = '12, 15, 14, 16, 13, 17';
       }
+      setDesignMode(currentDesignMode, false);
       runMonteCarloSimulation();
     }
 
@@ -2216,8 +2374,212 @@ Here are our metrics: [PASTE METRICS]`
       });
     }
 
+    
+    // ==========================================
+    // DESIGN SYSTEM ENGINE (IMPECCABLE vs. AMICRO)
+    // ==========================================
+    let currentDesignMode = localStorage.getItem('agile_design_mode') || 'impeccable';
+
+    function setDesignMode(mode, showNotification = true) {
+      currentDesignMode = mode;
+      localStorage.setItem('agile_design_mode', mode);
+
+      const root = document.documentElement;
+      const body = document.body;
+      const btnImpeccable = document.getElementById('btn-mode-impeccable');
+      const btnAmicro = document.getElementById('btn-mode-amicro');
+
+      if (mode === 'amicro') {
+        body.classList.remove('mode-impeccable');
+        body.classList.add('mode-amicro');
+
+        if (btnAmicro) {
+          btnAmicro.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+        }
+        if (btnImpeccable) {
+          btnImpeccable.className = 'text-ink-secondary hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+        }
+
+        initAmicroListeners();
+        triggerAmicroRollups();
+
+        if (showNotification) {
+          showToast('⚡ Activated Amicro Style (Tactile Micro-Interactions, 3D Tilt & Spotlights)');
+        }
+      } else {
+        body.classList.remove('mode-amicro');
+        body.classList.add('mode-impeccable');
+
+        if (btnImpeccable) {
+          btnImpeccable.className = 'switcher-btn-active px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+        }
+        if (btnAmicro) {
+          btnAmicro.className = 'text-ink-secondary hover:text-ink px-2 sm:px-2.5 py-1 rounded-md transition-all flex items-center gap-1.5 font-medium';
+        }
+
+        resetAmicroTransforms();
+
+        if (showNotification) {
+          showToast('📖 Activated Impeccable Style (Calm Editorial — Quiet Typography & Restraint)');
+        }
+      }
+    }
+
+    // Modal controls
+    function openDesignCompareModal() {
+      const modal = document.getElementById('design-compare-modal');
+      if (modal) {
+        modal.classList.remove('hidden');
+        // trigger demo rollup
+        let demoCounter = document.getElementById('demo-amicro-counter');
+        if (demoCounter) {
+          let val = 0;
+          let timer = setInterval(() => {
+            val += 0.5;
+            if (val >= 7.6) {
+              val = 7.6;
+              clearInterval(timer);
+            }
+            demoCounter.textContent = val.toFixed(1) + ' Sprints';
+          }, 35);
+        }
+      }
+    }
+
+    function closeDesignCompareModal() {
+      const modal = document.getElementById('design-compare-modal');
+      if (modal) modal.classList.add('hidden');
+    }
+
+    // Close on ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDesignCompareModal();
+        closeQuizModal();
+      }
+    });
+
+    // Amicro 3D Tilt & Cursor Spotlight
+    let amicroInitialized = false;
+    function initAmicroListeners() {
+      if (amicroInitialized) return;
+      amicroInitialized = true;
+
+      const isTouch = window.matchMedia('(pointer: coarse)').matches;
+
+      // Mousemove for spotlight and tilt
+      document.addEventListener('mousemove', (e) => {
+        if (currentDesignMode !== 'amicro' || isTouch) return;
+
+        // Spotlight update
+        const spotlights = document.querySelectorAll('.mode-amicro .amicro-spotlight');
+        spotlights.forEach(el => {
+          const rect = el.getBoundingClientRect();
+          if (
+            e.clientX >= rect.left - 50 &&
+            e.clientX <= rect.right + 50 &&
+            e.clientY >= rect.top - 50 &&
+            e.clientY <= rect.bottom + 50
+          ) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            el.style.setProperty('--mouse-x', `${x}px`);
+            el.style.setProperty('--mouse-y', `${y}px`);
+          }
+        });
+
+        // 3D Tilt update
+        const tilts = document.querySelectorAll('.mode-amicro .amicro-tilt');
+        tilts.forEach(card => {
+          const rect = card.getBoundingClientRect();
+          if (
+            e.clientX >= rect.left &&
+            e.clientX <= rect.right &&
+            e.clientY >= rect.top &&
+            e.clientY <= rect.bottom
+          ) {
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -5.5;
+            const rotateY = ((x - centerX) / centerX) * 5.5;
+            card.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale3d(1.015, 1.015, 1.015)`;
+          } else if (card.style.transform && card.style.transform !== 'none') {
+            card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+          }
+        });
+      });
+
+      // Mouseleave on cards to reset transform
+      document.querySelectorAll('.amicro-tilt').forEach(card => {
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+        });
+      });
+
+      // Ripple on click
+      document.addEventListener('click', (e) => {
+        if (currentDesignMode !== 'amicro') return;
+        const host = e.target.closest('.amicro-ripple-host');
+        if (!host) return;
+
+        const rect = host.getBoundingClientRect();
+        const ripple = document.createElement('span');
+        const size = Math.max(rect.width, rect.height) * 1.5;
+        const x = e.clientX - rect.left - size / 2;
+        const y = e.clientY - rect.top - size / 2;
+
+        ripple.className = 'amicro-ripple-wave';
+        ripple.style.width = `${size}px`;
+        ripple.style.height = `${size}px`;
+        ripple.style.left = `${x}px`;
+        ripple.style.top = `${y}px`;
+
+        host.appendChild(ripple);
+        setTimeout(() => ripple.remove(), 600);
+      });
+    }
+
+    function resetAmicroTransforms() {
+      document.querySelectorAll('.amicro-tilt').forEach(card => {
+        card.style.transform = 'none';
+      });
+    }
+
+    function triggerAmicroRollups() {
+      const metricP85 = document.getElementById('mc-p85-sprints');
+      const metricP95 = document.getElementById('mc-p95-sprints');
+      if (metricP85) {
+        let count = 0;
+        const target = 7.6;
+        let t = setInterval(() => {
+          count += 0.4;
+          if (count >= target) {
+            count = target;
+            clearInterval(t);
+          }
+          metricP85.textContent = count.toFixed(1) + ' Sprints';
+        }, 30);
+      }
+      if (metricP95) {
+        let count = 0;
+        const target = 8.9;
+        let t = setInterval(() => {
+          count += 0.4;
+          if (count >= target) {
+            count = target;
+            clearInterval(t);
+          }
+          metricP95.textContent = count.toFixed(1) + ' Sprints';
+        }, 30);
+      }
+    }
+
+
     // --- Onload Initialization ---
     window.addEventListener('DOMContentLoaded', () => {
+      setDesignMode(currentDesignMode, false);
       runMonteCarloSimulation();
       updateLittlesLaw();
       updateJiraPreview();
